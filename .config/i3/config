@@ -1,0 +1,150 @@
+#                                  ██ ██████
+#                                  ██      ██
+#                                  ██  █████
+#                                  ██      ██
+#                                  ██ ██████
+
+set $mod Mod4
+
+# Start a terminal
+bindsym $mod+Return exec --no-startup-id /usr/bin/termite
+
+# Kill focused window
+bindsym $mod+q kill
+
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split
+bindsym $mod+m split h
+bindsym $mod+n split v
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# Layouts
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+floating_modifier $mod
+
+# Focus the parent container
+bindsym $mod+p focus parent
+bindsym $mod+z focus child
+
+# Switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# reload, restart, exit
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exit
+
+mode "resize" {
+	bindsym h resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym j resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
+	bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+exec --no-startup-id setxkbmap -option ctrl:swapcaps
+
+# Style #
+font pango:Source Code Pro 12px
+
+# Colors alias
+set $CL_BG #282C34
+set $CL_FG #ABB2BF
+set $CL_CUR #528BFF
+set $CL_BLACK #000000
+set $CL_RED #E06C75
+set $CL_GREEN #98C379
+set $CL_ORANGE #D19A66
+set $CL_BLUE #61AEEE
+set $CL_MAGENTA #C678DD
+set $CL_CYAN #56B6C2
+set $CL_LIGHTGRAY #ABB2BF
+set $CL_DARKGRAY #5C6370
+set $CL_WHITE #FFFFFF
+
+# class                 border      backgr.     text    indicator   child_border
+client.focused          $CL_CUR     $CL_CUR     $CL_BG   $CL_CUR     $CL_CUR
+client.focused_inactive $CL_MAGENTA $CL_MAGENTA $CL_BG   $CL_MAGENTA $CL_MAGENTA
+client.unfocused        $CL_BG      $CL_BG      $CL_CUR  $CL_BG      $CL_BG
+client.urgent           $CL_RED     $CL_RED     $CL_BG   $CL_RED     $CL_RED
+client.placeholder      $CL_BG      $CL_BG      $CL_WHITE $CL_BLACK  $CL_BG
+
+# Start dmenu
+bindsym $mod+d exec --no-startup-id dmenu_run -nb Black -sb "$CL_CUR" -l 10
+
+# Bar setup
+bar {
+    tray_output none
+    mode invisible
+}
+
+# Remove border while only one window opens
+smart_borders on
+
+new_window pixel 1
+new_float pixel 1
+
+# Run status bar
+exec_always --no-startup-id /home/tom/.local/bin/polybar_init
