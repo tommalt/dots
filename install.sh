@@ -8,6 +8,6 @@ for f in $files; do
 		continue;
 	fi
 	target="$HOME/dots/$f";
-	ln -sf "$target" "$HOME/$f";
+	cp "$target" "$HOME/$f";
 done
 
