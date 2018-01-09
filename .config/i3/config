@@ -132,7 +132,7 @@ client.urgent           $CL_RED     $CL_RED     $CL_BG   $CL_RED     $CL_RED
 client.placeholder      $CL_BG      $CL_BG      $CL_WHITE $CL_BLACK  $CL_BG
 
 # Start dmenu
-bindsym $mod+d exec --no-startup-id dmenu_run -nb Black -sb "$CL_CUR" -l 10
+bindsym $mod+d exec --no-startup-id dmenu_run -nb Black -sb "$CL_MAGENTA" -l 10
 
 # Bar setup
 bar {
