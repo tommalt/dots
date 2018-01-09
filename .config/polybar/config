@@ -135,12 +135,11 @@ interface = wlp2s0
 format-connected-prefix = " "
 format-disconnected-prefix = " "
 
-; format-connected = <label-connected>
-format-connected =  %essid% %local_ip%
+format-connected = <label-connected>
 
 format-disconnected = <label-disconnected>
 
-; label-connected =  %essid% %local_ip%
+label-connected =  %essid% %local_ip%
 
 label-connected-foreground = ${colors.foreground-alt}
 
