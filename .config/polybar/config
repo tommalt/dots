@@ -5,16 +5,16 @@
 ;           ██       ██████  ███████ ██    ██████  ██   ██ ██   ██
 
 [colors]
-background = #282C34
+background = #002b36
 foreground = #ABB2BF
-foreground-alt= #528BFF
+foreground-alt= #ff6347
 black = #000000
-red = #E06C75
+red = #dc322f
 green = #98C379
-orange = #D19A66
+orange = #ff6347
 blue = #61AEEE
-magenta = #C678DD
-cyan = #56B6C2
+magenta = #d33682
+cyan = #2aa198
 lightgray = #ABB2BF
 darkgray = #5C6370
 white = #FFFFFF
@@ -29,8 +29,8 @@ monitor = ${env:MONITOR}
 width = 100%
 height = 18
 
-font-0 = Monaco:size=8:weight=bold
-font-1 = Font Awesome 5 Free:size=11
+font-0 = Font Awesome 5 Free:size=11;0
+font-1 = Monaco:size=8:weight=bold
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -74,7 +74,7 @@ time = %H:%M:%S
 
 format =  <label>
 format-prefix = " "
-format-foreground = ${colors.orange}
+format-foreground = ${colors.red}
 
 label = %time%
 
@@ -141,11 +141,11 @@ format-disconnected = <label-disconnected>
 
 label-connected =  %essid% %local_ip%
 
-label-connected-foreground = ${colors.foreground-alt}
+label-connected-foreground = ${colors.cyan}
 
 label-disconnected =  [not connected]
 
-label-disconnected-foreground = ${colors.red}
+label-disconnected-foreground = ${colors.cyan}
 
 [module/wired-network]
 type = internal/network
