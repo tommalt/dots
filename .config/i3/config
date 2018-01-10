@@ -7,7 +7,7 @@
 set $mod Mod4
 
 # Start a terminal
-bindsym $mod+Return exec --no-startup-id /usr/bin/termite
+bindsym $mod+Return exec --no-startup-id /usr/local/bin/st
 
 # Kill focused window
 bindsym $mod+q kill
