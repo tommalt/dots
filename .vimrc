@@ -51,7 +51,6 @@ if (empty($TMUX))
 	endif
 endif
 set background=dark
-colorscheme one
 
 set encoding=utf8
 set ffs=unix,dos,mac
