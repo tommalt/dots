@@ -108,7 +108,8 @@ label-muted-font = 1
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
-
+;only show monitor specific workspaces
+pin-workspaces = true
 index-sort = true
 wrapping-scroll = true
 
