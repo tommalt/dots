@@ -110,16 +110,16 @@ exec --no-startup-id setxkbmap -option ctrl:swapcaps
 font pango:Source Code Pro 12px
 
 # Colors alias
-set $CL_BG #282C34
+set $CL_BG #002b36
 set $CL_FG #ABB2BF
-set $CL_CUR #528BFF
+set $CL_CUR #ff6347
 set $CL_BLACK #000000
-set $CL_RED #E06C75
+set $CL_RED #dc322f
 set $CL_GREEN #98C379
-set $CL_ORANGE #D19A66
+set $CL_ORANGE #ff6347
 set $CL_BLUE #61AEEE
-set $CL_MAGENTA #C678DD
-set $CL_CYAN #56B6C2
+set $CL_MAGENTA #d33682
+set $CL_CYAN #2aa198
 set $CL_LIGHTGRAY #ABB2BF
 set $CL_DARKGRAY #5C6370
 set $CL_WHITE #FFFFFF
