@@ -1,0 +1,14 @@
+colorscheme solarized-dark
+add-highlighter global number_lines -relative
+
+# Leader key mappings (leader = ',' by default)
+# equivalent of F and T in VIM
+map global user f <a-f> -docstring 'jump to previous'
+map global user t <a-t> -docstring 'jump until previous'
+map global user F <a-F> -docstring 'jump to previous; extend selection'
+map global user T <a-T> -docstring 'jump until previous; extend selection'
+
+# use tabs
+set-option global indentwidth 0
+
+set-option global termcmd 'st -e sh -c'
