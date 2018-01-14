@@ -1,0 +1,5 @@
+ignore
+install.sh
+uninstall.sh
+README
+*.h

@@ -1,4 +1,4 @@
-#!/bin/bash
+#/bin/bash
 
 set -e
 cd "$HOME/dots"
@@ -8,7 +8,7 @@ function exclude {
 	fi
 	return 1
 }
-files=`git ls-files`
+files=`find . -type f -not -iwholename "*.git*" $(printf "! -name %s " $(cat ignore)) | cut -d'/' -f2-`
 for f in $files; do
 	if exclude "$f"; then
 		continue;
