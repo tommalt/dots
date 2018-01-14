@@ -9,52 +9,10 @@ declare-option -docstring "characters inserted after a commented block" \
     str comment_block_end
 
 # Default comments for all languages
-hook global BufSetOption filetype=asciidoc %{
-    set-option buffer comment_block_begin '///'
-    set-option buffer comment_block_end '///'
-}
-
-hook global BufSetOption filetype=(c|cpp|go|java|javascript|objc|php|rust|sass|scala|scss|swift|typescript) %{
+hook global BufSetOption filetype=(c|cpp|javascript|php) %{
     set-option buffer comment_line '//'
     set-option buffer comment_block_begin '/*'
     set-option buffer comment_block_end '*/'
-}
-
-hook global BufSetOption filetype=(cabal|haskell|moon) %{
-    set-option buffer comment_line '--'
-    set-option buffer comment_block_begin '{-'
-    set-option buffer comment_block_end '-}'
-}
-
-hook global BufSetOption filetype=clojure %{
-    set-option buffer comment_line '#_ '
-    set-option buffer comment_block_begin '(comment '
-    set-option buffer comment_block_end ')'
-}
-
-hook global BufSetOption filetype=coffee %{
-    set-option buffer comment_block_begin '###'
-    set-option buffer comment_block_end '###'
-}
-
-hook global BufSetOption filetype=css %{
-    set-option buffer comment_line ''
-    set-option buffer comment_block_begin '/*'
-    set-option buffer comment_block_end '*/'
-}
-
-hook global BufSetOption filetype=d %{
-    set-option buffer comment_line '//'
-    set-option buffer comment_block_begin '/+'
-    set-option buffer comment_block_end '+/'
-}
-
-hook global BufSetOption filetype=(gas|ini) %{
-    set-option buffer comment_line ';'
-}
-
-hook global BufSetOption filetype=haml %{
-    set-option buffer comment_line '-#'
 }
 
 hook global BufSetOption filetype=html %{
@@ -73,41 +31,9 @@ hook global BufSetOption filetype=lisp %{
     set-option buffer comment_block_end '|#'
 }
 
-hook global BufSetOption filetype=lua %{
-    set-option buffer comment_line '--'
-    set-option buffer comment_block_begin '--[['
-    set-option buffer comment_block_end ']]'
-}
-
-hook global BufSetOption filetype=markdown %{
-    set-option buffer comment_line ''
-    set-option buffer comment_block_begin '[//]'
-    set-option buffer comment_block_end '# (:)'
-}
-
-hook global BufSetOption filetype=perl %{
-    set-option buffer comment_block_begin '#['
-    set-option buffer comment_block_end ']'
-}
-
-hook global BufSetOption filetype=pug %{
-    set-option buffer comment_line '//'
-}
-
 hook global BufSetOption filetype=python %{
     set-option buffer comment_block_begin "'''"
     set-option buffer comment_block_end "'''"
-}
-
-hook global BufSetOption filetype=ragel %{
-    set-option buffer comment_line '%%'
-    set-option buffer comment_block_begin '%%{'
-    set-option buffer comment_block_end '}%%'
-}
-
-hook global BufSetOption filetype=ruby %{
-    set-option buffer comment_block_begin '^begin='
-    set-option buffer comment_block_end '^=end'
 }
 
 define-command comment-block -docstring '(un)comment selections using block comments' %{
