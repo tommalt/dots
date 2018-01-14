@@ -314,7 +314,7 @@ define-command -hidden c-family-insert-include-guards %{
     %sh{
         case "${kak_opt_c_include_guard_style}" in
             ifdef)
-                echo 'execute-keys ggi<c-r>%<ret><esc>ggxs\.<ret>c_<esc><space>A_INCLUDED<esc>ggxyppI#ifndef<space><esc>jI#define<space><esc>jI#endif<space>//<space><esc>O<esc>'
+                echo 'execute-keys ggi<c-r>%<ret><esc>ggx~s\.<ret>c_<esc><space>ggxyppI#ifndef<space><esc>jI#define<space><esc>jI#endif<space>/*<space><esc>A<space>*/'
                 ;;
             pragma)
                 echo 'execute-keys ggi#pragma<space>once<esc>'
@@ -323,7 +323,6 @@ define-command -hidden c-family-insert-include-guards %{
         esac
     }
 }
-
 hook -group c-family-insert global BufNewFile .*\.(h|hh|hpp|hxx|H) c-family-insert-include-guards
 
 declare-option -docstring "colon separated list of path in which header files will be looked for" \
