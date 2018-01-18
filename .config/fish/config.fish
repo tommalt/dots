@@ -9,3 +9,5 @@ alias gd="git diff"
 alias gb="git branch"
 alias gba="git branch -a"
 alias gco="git checkout"
+
+set -gx LD_LIBRARY_PATH /usr/local/lib
