@@ -6,8 +6,8 @@
 
 set $mod Mod4
 
-# Start a terminal
-bindsym $mod+Return exec --no-startup-id /usr/local/bin/st
+set $INTERACTIVE_SHELL /bin/fish
+bindsym $mod+Return exec --no-startup-id /usr/local/bin/st -e $INTERACTIVE_SHELL
 
 # Kill focused window
 bindsym $mod+q kill
