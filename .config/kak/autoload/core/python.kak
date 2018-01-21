@@ -138,6 +138,8 @@ hook global WinSetOption filetype=python %{
     hook window InsertChar \n -group python-indent python-indent-on-new-line
     # cleanup trailing whitespaces on current line insert end
     hook window InsertEnd .* -group python-indent %{ try %{ execute-keys -draft \; <a-x> s ^\h+$ <ret> d } }
+    set-option buffer tabstop 4
+    set-option buffer indentwidth 4
 }
 
 hook -group python-highlight global WinSetOption filetype=(?!python).* %{ remove-highlighter window/python }
