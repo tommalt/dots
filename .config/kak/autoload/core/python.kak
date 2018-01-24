@@ -135,6 +135,8 @@ define-command -hidden python-indent-on-new-line %{
 hook -group python-highlight global WinSetOption filetype=python %{ add-highlighter window ref python }
 
 hook global WinSetOption filetype=python %{
+    hook buffer InsertChar \t %{ exec -draft -itersel h@ }
+    map buffer insert <backtab> '<a-;><lt>'
     hook window InsertChar \n -group python-indent python-indent-on-new-line
     # cleanup trailing whitespaces on current line insert end
     hook window InsertEnd .* -group python-indent %{ try %{ execute-keys -draft \; <a-x> s ^\h+$ <ret> d } }
