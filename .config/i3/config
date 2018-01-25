@@ -6,7 +6,7 @@
 
 set $mod Mod4
 
-set $INTERACTIVE_SHELL /bin/fish
+set $INTERACTIVE_SHELL /bin/bash
 bindsym $mod+Return exec --no-startup-id /usr/local/bin/st -e $INTERACTIVE_SHELL
 
 # Kill focused window
