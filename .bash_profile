@@ -1,7 +1,7 @@
 #
 # ~/.bash_profile
 #
-
+[[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 export EDITOR=vis
