@@ -5,6 +5,7 @@
 #                                  ██ ██████
 
 set $mod Mod4
+exec --no-startup-id xmodmap -e 'keycode 135 = Super_L' && xset -r 135
 
 set $INTERACTIVE_SHELL /bin/bash
 bindsym $mod+Return exec --no-startup-id /usr/local/bin/st -e $INTERACTIVE_SHELL
@@ -104,6 +105,7 @@ bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
+exec --no-startup-id xset r rate 175 30
 exec --no-startup-id setxkbmap -option ctrl:swapcaps
 
 # Style #
