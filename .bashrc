@@ -21,3 +21,6 @@ alias gd="git diff"
 alias gb="git branch"
 alias gba="git branch -a"
 alias gco="git checkout"
+
+alias l="ls -lah"
+alias ll="ls -lh"
