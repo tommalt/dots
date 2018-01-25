@@ -9,8 +9,6 @@ PS1='[\u@\h \W]\$ '
 
 shopt -s autocd #cd into dir w/o typing cd
 
-set -o vi
-
 alias gst="git status"
 alias glo="git log --oneline"
 alias glog="git log --oneline --decorate --graph"
