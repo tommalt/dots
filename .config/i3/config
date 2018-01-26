@@ -82,7 +82,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # reload, restart, exit, lock
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+F1 restart
 bindsym $mod+Shift+Escape exit
 bindsym $mod+Shift+x exec --no-startup-id i3lock -c 000000
 
