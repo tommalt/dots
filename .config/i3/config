@@ -154,3 +154,18 @@ exec_always --no-startup-id /home/tom/.config/polybar/launch.sh
 
 # open matplotlib windows in floating format
 for_window [class="matplotlib"] floating enable
+
+#i3 gaps
+for_window [class="^.*"] border pixel 3
+gaps inner 15
+gaps outer 15
+
+mode "gaps-resize" {
+	bindsym k gaps inner current plus 5
+	bindsym j gaps inner current minus 5
+	bindsym h gaps outer current minus 5
+	bindsym l gaps outer current plus 5
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+g mode "gaps-resize"
