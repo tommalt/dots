@@ -1,4 +1,3 @@
-colorscheme solarized-dark
 add-highlighter global number_lines -relative
 
 # Leader key mappings (leader = ',' by default)
