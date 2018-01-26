@@ -1,8 +1,13 @@
 #!/bin/bash
+set -e
 command -v wal >/dev/null 2>&1 || { echo >&2 "wal not found. Aborting."; exit 1; }
 command -v walstc.py >/dev/null 2>&1 || { echo >&2 "walstc.py not found. Aborting."; exit 1; }
 
 stdir=/home/tom/dev/builds/st
 cd $stdir 
-cp config.h config.h.backup
-walstc.py config.h.backup /home/tom/.cache/wal/colors-wal-st.h
+if [ -f config.h ]; then cp config.h config.h.backup; fi
+if [ ! -f config.h.backup ]; then cp config.def.h config.h.backup; fi
+walstc.py config.h.backup /home/tom/.cache/wal/colors-wal-st.h >tmp
+cp tmp config.h
+rm tmp
+make clean && sudo make install
