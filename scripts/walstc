@@ -1,0 +1,8 @@
+#!/bin/bash
+command -v wal >/dev/null 2>&1 || { echo >&2 "wal not found. Aborting."; exit 1; }
+command -v walstc.py >/dev/null 2>&1 || { echo >&2 "walstc.py not found. Aborting."; exit 1; }
+
+stdir=/home/tom/dev/builds/st
+cd $stdir 
+cp config.h config.h.backup
+walstc.py config.h.backup /home/tom/.cache/wal/colors-wal-st.h
