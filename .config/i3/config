@@ -157,23 +157,22 @@ bar {
     tray_output none
     mode invisible
 }
+exec_always --no-startup-id /home/tom/.config/polybar/launch.sh
 
 # Remove border while only one window opens
 smart_borders on
-
 new_window pixel 1
 new_float pixel 1
-
-# Run status bar
-exec_always --no-startup-id /home/tom/.config/polybar/launch.sh
 
 # open matplotlib windows in floating format
 for_window [class="matplotlib"] floating enable
 
 #i3 gaps
-for_window [class="^.*"] border pixel 3
-gaps inner 15
-gaps outer 15
+for_window [class="^.*"] border pixel 1
+set $gaps_inner_size 15
+set $gaps_outer_size 15
+gaps inner $gaps_inner_size
+gaps outer $gaps_outer_size
 
 mode "gaps-resize" {
 	bindsym k gaps inner current plus 5
@@ -184,3 +183,11 @@ mode "gaps-resize" {
 	bindsym Escape mode "default"
 }
 bindsym $mod+g mode "gaps-resize"
+
+mode "toggle_gaps" {
+	bindsym 0 mode "default", gaps inner all set $gaps_inner_size, gaps outer all set $gaps_outer_size
+	bindsym 1 mode "default", gaps inner all set 1, gaps outer all set 1
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+t mode "toggle_gaps"
