@@ -54,6 +54,9 @@ floating_modifier $mod
 bindsym $mod+p focus parent
 bindsym $mod+z focus child
 
+#goto previous workspace
+bindsym $mod+backslash workspace back_and_forth
+
 # Switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
