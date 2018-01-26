@@ -56,6 +56,7 @@ bindsym $mod+z focus child
 
 #goto previous workspace
 bindsym $mod+backslash workspace back_and_forth
+bindsym $mod+Shift+backslash move container to workspace back_and_forth
 
 # Switch to workspace
 bindsym $mod+1 workspace 1
