@@ -7,6 +7,7 @@
 set $mod Mod4
 
 set $term st
+set $browser /usr/bin/firefox-developer-edition
 set $INTERACTIVE_SHELL /bin/bash
 bindsym $mod+Return exec --no-startup-id $term -e $INTERACTIVE_SHELL
 bindsym $mod+apostrophe split h ;; exec --no-startup-id $term -e $INTERACTIVE_SHELL
@@ -133,7 +134,9 @@ exec --no-startup-id setxkbmap -option ctrl:swapcaps
 
 # dmenu, and application shortcuts
 bindsym $mod+d exec --no-startup-id dmenu_run -nb Black -sb "$CL_MAGENTA" -l 10
-bindsym $mod+Shift+f exec --no-startup-id /usr/bin/firefox-developer-edition
+bindsym $mod+Shift+f exec --no-startup-id $browser
+bindsym XF86Calculator exec --no-startup-id $term -e python
+bindsym XF86HomePage exec --no-startup-id $browser https://www.archlinux.org/
 
 # Style #
 font pango:Source Code Pro 12px
