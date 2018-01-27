@@ -60,3 +60,5 @@ cdh () {
 	fi
 	builtin cd ${lines[$index]}
 }
+
+[[ -f "${HOME}/.d" ]] && cd "$(< ${HOME}/.d)"
