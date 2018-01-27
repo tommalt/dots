@@ -50,6 +50,10 @@ cdh () {
 	for (( i=0; i <${len}; i++ )); do
 		echo "$i ${lines[$i]}"
 	done
+	if [ $# -eq 1 ]; then
+		builtin cd ${lines[$1]}
+		return 0;
+	fi
 	read -p 'Pick a number: ' index
 	if [[ -z "$index" ]]; then
 		return 1;
