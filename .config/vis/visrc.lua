@@ -3,7 +3,7 @@ require('vis')
 
 vis.events.subscribe(vis.events.INIT, function()
 	-- Your global configuration options
-	vis:command('set theme acme')
+	vis:command('set theme dark-16')
 end)
 
 vis.events.subscribe(vis.events.WIN_OPEN, function(win)
