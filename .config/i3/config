@@ -202,9 +202,9 @@ set_from_resource $CL_FG i3wm.color7 #f0f0f0
 set_from_resource $CL_BG i3wm.color2 #000000
 
 #class                  border   background   text     indicator   child_border
-client.focused          $CL_9    $CL_11       $CL_FG    $CL_5      $CL_6
-client.focused_inactive $CL_9    $CL_11       $CL_FG    $CL_5      $CL_6
-client.unfocused        $CL_0    $CL_0        $CL_1     $CL_5      $CL_9
+client.focused          $CL_9    $CL_11       $CL_FG    $CL_5      $CL_9
+client.focused_inactive $CL_0    $CL_11       $CL_FG    $CL_5      $CL_6
+client.unfocused        $CL_0    $CL_0        $CL_1     $CL_5      $CL_6
 client.urgent           $CL_RED  $CL_RED      $CL_RED   $CL_RED    $CL_RED
 
 # Bar setup
