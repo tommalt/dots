@@ -17,6 +17,7 @@ else
 fi
 
 if [ -f ~/.cache/wal/colors.Xresources ]; then
+	cp ~/.Xresources ~/dots/.Xresources
 	cp ~/.Xresources ~/.Xresources.backup
 	cp ~/.cache/wal/colors.Xresources ~/.Xresources
 	if xrdb -load ~/.Xresources; then
