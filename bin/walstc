@@ -10,4 +10,4 @@ if [ ! -f config.h.backup ]; then cp config.def.h config.h.backup; fi
 walstc.py config.h.backup /home/tom/.cache/wal/colors-wal-st.h >tmp
 cp tmp config.h
 rm tmp
-make clean && sudo make install
+make clean && sudo make -j4 install
