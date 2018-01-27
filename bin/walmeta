@@ -25,9 +25,7 @@ if [ -f ~/.cache/wal/colors.Xresources ]; then
 	fi
 fi
 
-if grep '^set_from_resource' ~/.config/i3/config; then
-	echo -e "${YELLOW}Warn:${NC} Update the i3 config file to use Xresources colors"
-	echo -e "see: https://github.com/dylanaraps/pywal/wiki/Customization#i3"
-fi
+echo -e "${YELLOW}Reminder:${NC} Update the i3 config file to use Xresources colors"
+echo -e "see: https://github.com/dylanaraps/pywal/wiki/Customization#i3"
 
 
