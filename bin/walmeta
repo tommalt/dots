@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# a 'meta' command to recompile st, update Xresources, etc
+# after running wal
+
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+# recomiles suckless terminal
+echo -e "${GREEN}Compiling st... ${NC}"
+if walstc; then
+	echo -e "... st compiled  ${GREEN}OK${NC}"
+else
+	echo -e "${RED}Fatal:${NC} st compilation failed${NC}"
+fi
+
+if [ -f ~/.cache/wal/colors.Xresources ]; then
+	cp ~/.Xresources ~/.Xresources.backup
+	cp ~/.cache/wal/colors.Xresources ~/.Xresources
+	if xrdb -load ~/.Xresources; then
+		echo -e "Xresources replaced...  ${GREEN}OK${NC}"
+	fi
+fi
+
+if grep 'set_from_resource' ~/.config/i3/config; then
+	echo -e "${YELLOW}Warn:${NC} Update the i3 config file to use Xresources colors"
+	echo -e "see: https://github.com/dylanaraps/pywal/wiki/Customization#i3"
+fi
+
+
