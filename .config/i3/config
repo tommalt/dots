@@ -10,8 +10,9 @@ set $term st
 set $browser /usr/bin/firefox-developer-edition
 set $INTERACTIVE_SHELL /bin/bash
 bindsym $mod+Return exec --no-startup-id $term -e $INTERACTIVE_SHELL
-bindsym $mod+apostrophe split h ;; exec --no-startup-id $term -e $INTERACTIVE_SHELL
-bindsym $mod+slash split v ;; exec --no-startup-id $term -e $INTERACTIVE_SHELL
+bindsym $mod+Shift+Return exec --no-startup-id /home/tom/bin/termd.sh $term "`xcwd`"
+bindsym $mod+apostrophe split h ;; exec --no-startup-id /home/tom/bin/termd.sh $term "`xcwd`"
+bindsym $mod+slash split v ;; exec --no-startup-id /home/tom/bin/termd.sh $term "`xcwd`"
 
 # Kill focused window
 bindsym $mod+q kill
