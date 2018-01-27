@@ -1,0 +1,4 @@
+#!/bin/bash
+f=$(cat ~/.cache/wal/wal)
+feh --bg-scale "$f"
+
