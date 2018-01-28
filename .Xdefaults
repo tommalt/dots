@@ -8,7 +8,7 @@ UXTerm*foreground:  #d59fd5
 URxvt*background:   [80]#150c1e
 XTerm*background:   #150c1e
 UXTerm*background:  #150c1e
-URxvt*cursorColor:  #d59fd5
+URxvt*cursorColor:  magenta
 XTerm*cursorColor:  #d59fd5
 UXTerm*cursorColor: #d59fd5
 URxvt*borderColor:  [100]#150c1e
@@ -25,6 +25,20 @@ URxvt.letterSpace: -1
 
 URxvt.scrollBar: false
 URxvt.cursorBlink: 1
+
+!perls
+URxvt.perl-ext-common: default,matcher,resize-font,clipboard,url-select,keyboard-select
+URxvt.colorUL: #4682B4
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.M-s: perl:url-select:search
+!left-click to open links
+URxvt.matcher.button: 1
+!vim mode
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.resize-font.smaller: M-p
+URxvt.resize-font.bigger:  M-n
 
 ! Colors 0-15.
 *.color0: #150c1e
