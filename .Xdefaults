@@ -5,7 +5,7 @@ emacs*background:   #150c1e
 URxvt*foreground:   #d59fd5
 XTerm*foreground:   #d59fd5
 UXTerm*foreground:  #d59fd5
-URxvt*background:   [80]#150c1e
+URxvt*background:   [90]#150c1e
 XTerm*background:   #150c1e
 UXTerm*background:  #150c1e
 URxvt*cursorColor:  magenta
