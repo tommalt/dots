@@ -23,4 +23,4 @@ for f in $files; do
 	cp "$src" "$dest";
 done
 
-xrdb -load ~/.Xresources
+xrdb -merge ~/.Xresources
