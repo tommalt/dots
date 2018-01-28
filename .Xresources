@@ -20,7 +20,7 @@ URxvt*scrollTtyKeypress: true
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
-URxvt.font: xft:Inconsolata:size=9
+URxvt.font: xft:Inconsolata:size=11
 URxvt.letterSpace: -1
 
 URxvt.scrollBar: false
