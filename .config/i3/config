@@ -141,7 +141,7 @@ bindsym XF86Calculator exec --no-startup-id $term -e python
 bindsym XF86HomePage exec --no-startup-id $browser https://www.archlinux.org/
 
 # Style #
-font pango:Source Code Pro 12px
+font pango:Inconsolata 12px
 
 
 # Colors alias - old, from solarized dark theme
