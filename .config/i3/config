@@ -223,6 +223,7 @@ new_float pixel 1
 
 # open matplotlib windows in floating format
 for_window [class="matplotlib"] floating enable
+for_window [class="Sxiv"] floating enable
 
 #i3 gaps
 for_window [class="^.*"] border pixel 1
