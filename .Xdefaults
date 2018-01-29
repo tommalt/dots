@@ -25,6 +25,8 @@ URxvt.letterSpace: -1
 
 URxvt.scrollBar: false
 URxvt.cursorBlink: 1
+URxvt.pointerBlank: true
+URxvt.pointerBlankDelay: 987654321
 
 !perls
 URxvt.perl-ext-common: default,matcher,resize-font,clipboard,url-select,keyboard-select
