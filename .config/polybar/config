@@ -17,6 +17,7 @@ primary = ${xrdb:color3}
 secondary = ${xrdb:color5}
 alert = #bd2c40
 col = #00f
+green = #32a51d
 
 [bar/mine]
 monitor = ${env:MONITOR}
@@ -42,6 +43,7 @@ module-margin-right = 2
 font-0 = mono:pixelsize=9;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = Wuncon Siji:pixelsize=9;1
+font-3 = Inconsolata:pixelsize=10:weight=bold;0
 
 modules-left = i3 cmus alsa
 modules-center = xwindow
@@ -56,15 +58,17 @@ scroll-down = i3wm-wsprev
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:56:...%
+label-font = 4
 
 [module/filesystem]
 type = internal/fs
 interval = 25
-
 mount-0 = /
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+label-mounted-font = 4
+label-unmounted-font = 4
 
 [module/bspwm]
 type = internal/bspwm
@@ -122,6 +126,7 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 [module/cmus]
 type = custom/script
+label-font = 4
 
 exec = sh ~/.config/polybar/cmus.sh
 exec-if = pgrep -x cmus
@@ -153,12 +158,15 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = ${xrdb:color5}
-label-connected = %essid%
+label-connected = %essid% %local_ip%
+label-connected-font = 4
+label-connected-foreground = ${colors.green}
 
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected-font = 4
+label-disconnected-foreground = ${colors.alert}
 
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -174,20 +182,40 @@ interval = 5
 date = " %a, %b %d, %Y"
 ;date-alt = " %a, %b %d, %Y at %I:%M%p"
 ;date-alt = " %Y-%m-%d"
-
 time = " at %I:%M%p"
 ;time-alt = %H:%M:%S
-
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${xrdb:color12}
-
 label = %date% %time%
+label-font = 4
 
 [module/alsa]
-type = internal/volume
-format-volume = <label-volume>
+type = internal/alsa
+format-volume = <label-volume> <bar-volume>
+label-volume = Volume
 label-volume-foreground = ${colors.foreground}
+label-volume-font = 4
+
+format-muted-prefix = " "
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${xrdb:color10}
+bar-volume-foreground-1 = ${xrdb:color10}
+bar-volume-foreground-2 = ${xrdb:color10}
+bar-volume-foreground-3 = ${xrdb:color10}
+bar-volume-foreground-4 = ${xrdb:color10}
+bar-volume-foreground-5 = ${xrdb:color11}
+bar-volume-foreground-6 = ${xrdb:color1}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 4
+bar-volume-fill = =
+bar-volume-fill-font = 4
+bar-volume-empty = -
+bar-volume-empty-font = 4
+bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/cputemp]
 type = custom/script
@@ -195,19 +223,18 @@ exec = ~/.config/polybar/temperature.sh
 interval = 60
 format = <label>
 format-underline = ${xrdb:color1}
+label-font = 4
 
 [module/exitmenu]
 type = custom/menu
 label-open = DIE
+label-open-font = 4
 menu-0-0 = DIE
 menu-0-0-exec = i3-msg exit
+menu-0-0-font = 4
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
 
 [global/wm]
 margin-top = 5
