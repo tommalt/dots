@@ -15,3 +15,10 @@ i3 (gaps)
 polybar
 ranger
 Arch.
+
+fonts: (for polybar)
+
+ttf-unifont
+siji
+Inconsolata
+
