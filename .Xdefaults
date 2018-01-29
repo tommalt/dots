@@ -38,7 +38,7 @@ URxvt.matcher.button: 1
 !vim mode
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.resize-font.smaller: M-p
-URxvt.resize-font.bigger:  M-n
+URxvt.resize-font.bigger:  M-o
 
 ! Colors 0-15.
 *.color0: #150c1e
