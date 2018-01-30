@@ -29,12 +29,11 @@ URxvt.pointerBlank: true
 URxvt.pointerBlankDelay: 987654321
 
 !perls
-URxvt.perl-ext-common: default,matcher,resize-font,clipboard,url-select,keyboard-select
+URxvt.perl-ext-common: default,matcher,resize-font,clipboard,url-select,keyboard-select,-searchable-scrollback
 URxvt.colorUL: #4682B4
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
 URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.keysym.M-s: perl:url-select:search
 !left-click to open links
 URxvt.matcher.button: 1
 !vim mode
