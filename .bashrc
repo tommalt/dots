@@ -27,7 +27,7 @@ alias ll="ls -lh"
 
 # 'syncing' directories between terminal sessions
 cd () {
-	if [ $# -ne 0 ]; then
+	if [ $# -ne 0 ] && [ ! -z $1 ]; then
 		if [ -d $1 ]; then
 			path=$(realpath $1)
 			echo $path >> ~/.cdh
