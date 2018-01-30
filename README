@@ -9,7 +9,7 @@ tmux
 suckless terminal - config.h obsolete due wal and recompilation
 termite
 vim, vis, kakoune
-pywal (imagemagick), feh
+pywal (wireless_tools, imagemagick), feh
 python3 (for wal, st compile)
 i3 (gaps)
 polybar
