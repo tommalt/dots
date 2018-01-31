@@ -99,7 +99,7 @@ define-command -hidden c-family-insert-on-newline %[ evaluate-commands -draft %[
         try %[
             # if the previous line is opening the comment, insert star preceeded by space
             execute-keys -draft k<a-x><a-k>^\h*/\*<ret>
-            execute-keys -draft i<space>*<space><esc>
+            execute-keys -draft i<space><esc>
         ] catch %[
            try %[
                 # if the next line is a comment line insert a star
