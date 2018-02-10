@@ -55,10 +55,6 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 floating_modifier $mod
 
-# Focus the parent container
-bindsym $mod+p focus parent
-bindsym $mod+z focus child
-
 #goto previous workspace
 bindsym $mod+backslash workspace back_and_forth
 bindsym $mod+Shift+backslash move container to workspace back_and_forth
@@ -137,7 +133,6 @@ exec_always --no-startup-id /home/tom/bin/i3-set-background
 # dmenu, and application shortcuts
 bindsym $mod+d exec --no-startup-id dmenu_run -nb Black -sb "$CL_6" -l 10
 bindsym $mod+Shift+f exec --no-startup-id $browser
-bindsym XF86Calculator exec --no-startup-id $term -e python
 bindsym XF86HomePage exec --no-startup-id $browser https://www.archlinux.org/
 
 # Style #
@@ -224,6 +219,26 @@ new_float pixel 1
 # open matplotlib windows in floating format
 for_window [class="matplotlib"] floating enable
 for_window [class="Sxiv"] floating enable
+
+#scratchpad windows
+# calculator (python/R)
+for_window [instance="calculator"] floating enable
+for_window [instance="calculator"] resize set 625 400
+for_window [instance="calculator"] move scratchpad
+for_window [instance="calculator"] border pixel 5
+
+# scratch editor
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 625 400
+for_window [instance="dropdown"] move scratchpad
+for_window [instance="dropdown"] border pixel 5
+
+exec --no-startup-id $term -name calculator -e python -q
+bindsym $mod+p [instance="calculator"] scratchpad show; [instance="calculator"] move position center
+bindsym XF86Calculator [instance="calculator"] scratchpad show; [instance="calculator"] move position center
+
+exec --no-startup-id $term -name dropdown -e tmux
+bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 
 #i3 gaps
 for_window [class="^.*"] border pixel 1
