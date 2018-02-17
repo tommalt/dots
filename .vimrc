@@ -20,7 +20,6 @@ let g:mapleader = ","
 command W w !sudo tee % > /dev/null
 
 set number
-set cursorline
 set ttyfast
 set so=2        " buffer when scrolling
 set textwidth=80
