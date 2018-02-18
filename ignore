@@ -1,5 +1,6 @@
 ignore
 install.sh
 uninstall.sh
+cp-kakoune.sh
 README
 *.h
