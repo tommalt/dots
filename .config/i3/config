@@ -233,7 +233,7 @@ for_window [instance="dropdown"] resize set 625 400
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pixel 5
 
-exec --no-startup-id $term -name calculator -e python -q
+exec --no-startup-id $term -name calculator -e R -q
 bindsym $mod+p [instance="calculator"] scratchpad show; [instance="calculator"] move position center
 bindsym XF86Calculator [instance="calculator"] scratchpad show; [instance="calculator"] move position center
 
