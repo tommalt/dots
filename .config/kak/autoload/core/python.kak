@@ -12,8 +12,8 @@ hook global BufCreate .*[.](py) %{
 # ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
 add-highlighter shared/ regions -default code python \
-    double_string '"""' '"""'            '' \
-    single_string "'''" "'''"            '' \
+    docstring     '"""' '"""'            '' \
+    docstring     "'''" "'''"            '' \
     double_string '"'   (?<!\\)(\\\\)*"  '' \
     single_string "'"   (?<!\\)(\\\\)*'  '' \
     comment       '#'   '$'              ''
@@ -32,6 +32,13 @@ add-highlighter shared/python/code regex '\b\d+\+\d+[jJ]\b' 0:value
 
 add-highlighter shared/python/double_string fill string
 add-highlighter shared/python/single_string fill string
+
+add-highlighter shared/python/docstring/ regions -default docstring py-docstring \
+    python '>>> \K'    '\z' '' \
+    python '\.\.\. \K' '\z' ''
+add-highlighter shared/python/docstring/py-docstring/python    ref python
+add-highlighter shared/python/docstring/py-docstring/docstring fill string
+
 add-highlighter shared/python/comment       fill comment
 
 %sh{
@@ -113,6 +120,9 @@ add-highlighter shared/python/comment       fill comment
     "
 }
 
+add-highlighter shared/python/code regex (?<=[\w\s\d'"_])(<=|<<|>>|>=|<>|<|>|!=|==|\||\^|&|\+|-|\*\*|\*|//|/|%|~) 0:operator
+add-highlighter shared/python/code regex (?<=[\w\s\d'"_])((?<![=<>!])=(?![=])|[+*-]=) 0:builtin
+
 # Commands
 # ‾‾‾‾‾‾‾‾
 
@@ -142,6 +152,7 @@ hook global WinSetOption filetype=python %{
     hook window InsertEnd .* -group python-indent %{ try %{ execute-keys -draft \; <a-x> s ^\h+$ <ret> d } }
     set-option buffer tabstop 4
     set-option buffer indentwidth 4
+    hook window ModeChange insert:.* -group python-indent %{ try %{ execute-keys -draft \; <a-x> s ^\h+$ <ret> d } }
 }
 
 hook -group python-highlight global WinSetOption filetype=(?!python).* %{ remove-highlighter window/python }

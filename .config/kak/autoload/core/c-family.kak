@@ -99,7 +99,6 @@ define-command -hidden c-family-insert-on-newline %[ evaluate-commands -draft %[
         try %[
             # if the previous line is opening the comment, insert star preceeded by space
             execute-keys -draft k<a-x><a-k>^\h*/\*<ret>
-            execute-keys -draft i<space>*<space><esc>
         ] catch %[
            try %[
                 # if the next line is a comment line insert a star
@@ -277,7 +276,7 @@ hook global WinSetOption filetype=(c|cpp|objc) %[
         remove-hooks window c-family-insert
     }
 
-    hook -group c-family-indent window InsertEnd .* c-family-trim-autoindent
+    hook -group c-family-indent window ModeChange insert:.* c-family-trim-autoindent
     hook -group c-family-insert window InsertChar \n c-family-insert-on-newline
     hook -group c-family-indent window InsertChar \n c-family-indent-on-newline
     hook -group c-family-indent window InsertChar \{ c-family-indent-on-opening-curly-brace

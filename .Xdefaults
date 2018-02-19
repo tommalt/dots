@@ -38,8 +38,8 @@ URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.matcher.button: 1
 !vim mode
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.resize-font.smaller: M-p
-URxvt.resize-font.bigger:  M-o
+URxvt.resize-font.smaller: M-o
+URxvt.resize-font.bigger:  M-p
 
 ! Colors 0-15.
 *.color0: #150c1e

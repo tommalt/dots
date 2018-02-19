@@ -1,5 +1,3 @@
-call pathogen#infect()
-
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = ''
@@ -20,7 +18,6 @@ let g:mapleader = ","
 command W w !sudo tee % > /dev/null
 
 set number
-set cursorline
 set ttyfast
 set so=2        " buffer when scrolling
 set textwidth=80
