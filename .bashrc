@@ -62,3 +62,6 @@ cdh () {
 }
 
 [[ -f "${HOME}/.d" ]] && cd "$(< ${HOME}/.d)"
+
+# cursor color, if applicable
+[[ -f "${HOME}/.cache/wal/sequences" ]] && cat "${HOME}/.cache/wal/sequences"
