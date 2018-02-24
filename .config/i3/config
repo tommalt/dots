@@ -157,7 +157,6 @@ bar {
     mode invisible
 }
 exec_always --no-startup-id /home/tom/.config/polybar/launch.sh
-exec --no-startup-id compton --config /home/tom/.config/compton.conf -b
 
 # Remove border while only one window opens
 smart_borders on
