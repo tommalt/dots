@@ -7,7 +7,7 @@
 set $mod Mod4
 
 set $term urxvt
-set $browser /usr/bin/firefox-developer-edition
+set $browser /usr/bin/qutebrowser
 set $INTERACTIVE_SHELL /bin/bash
 bindsym $mod+Return exec --no-startup-id $term -e $INTERACTIVE_SHELL
 bindsym $mod+Shift+Return exec --no-startup-id /home/tom/bin/termd.sh $term "`xcwd`"
