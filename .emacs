@@ -14,6 +14,8 @@
 (defun kill-all-buffers()
   (interactive)
   (mapc 'kill-buffer (buffer-list)))
+;; cycle windows with Shift+up/right/down/left
+(windmove-default-keybindings)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
