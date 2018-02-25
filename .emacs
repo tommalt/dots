@@ -16,6 +16,13 @@
   (mapc 'kill-buffer (buffer-list)))
 ;; cycle windows with Shift+up/right/down/left
 (windmove-default-keybindings)
+;; remove menus on graphical display
+(if (display-graphic-p)
+    (progn
+      (menu-bar-mode -1)
+      (tool-bar-mode -1)
+      (scroll-bar-mode -1)
+      ))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
