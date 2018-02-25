@@ -23,6 +23,9 @@
       (tool-bar-mode -1)
       (scroll-bar-mode -1)
       ))
+;; remove annoying backup files
+(setq make-backup-files nil)
+(setq auto-save-default nil)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
