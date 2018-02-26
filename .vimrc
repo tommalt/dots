@@ -21,7 +21,6 @@ set number
 set ttyfast
 set so=2        " buffer when scrolling
 set textwidth=80
-set colorcolumn=80
 set lazyredraw
 
 set splitbelow
@@ -42,11 +41,6 @@ set whichwrap+=<,>,h,l
 set hlsearch
 
 syntax enable 
-if (empty($TMUX))
-	if (has("termguicolors"))
-		set termguicolors
-	endif
-endif
 set background=dark
 
 set encoding=utf8

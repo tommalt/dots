@@ -7,7 +7,7 @@
 set $mod Mod4
 
 set $term urxvt
-set $browser /usr/bin/firefox-developer-edition
+set $browser /usr/bin/qutebrowser
 set $INTERACTIVE_SHELL /bin/bash
 bindsym $mod+Return exec --no-startup-id $term -e $INTERACTIVE_SHELL
 bindsym $mod+Shift+Return exec --no-startup-id /home/tom/bin/termd.sh $term "`xcwd`"
@@ -132,77 +132,25 @@ exec_always --no-startup-id /home/tom/bin/i3-set-background
 exec --no-startup-id nm-applet
 
 # dmenu, and application shortcuts
-bindsym $mod+d exec --no-startup-id dmenu_run -nb Black -sb "$CL_6" -l 10
+bindsym $mod+d exec --no-startup-id dmenu_run -nb Black -sb "$CL_PRI" -l 10
 bindsym $mod+Shift+f exec --no-startup-id $browser
 bindsym XF86HomePage exec --no-startup-id $browser https://www.archlinux.org/
 
 # Style #
 font pango:Inconsolata 12px
 
-
-# Colors alias - old, from solarized dark theme
-#set $CL_BG #002b36
-#set $CL_FG #ABB2BF
-set $CL_CUR #ff6347
-set $CL_BLACK #000000
-set $CL_RED #dc322f
-set $CL_GREEN #98C379
-set $CL_ORANGE #ff6347
-set $CL_BLUE #61AEEE
-set $CL_MAGENTA #d33682
-set $CL_CYAN #2aa198
-set $CL_LIGHTGRAY #ABB2BF
-set $CL_DARKGRAY #5C6370
-set $CL_WHITE #FFFFFF
-# class                 border      backgr.     text    indicator   child_border
-#client.focused          $CL_CUR     $CL_CUR     $CL_BG   $CL_CUR     $CL_CUR
-#client.focused_inactive $CL_MAGENTA $CL_MAGENTA $CL_BG   $CL_MAGENTA $CL_MAGENTA
-#client.unfocused        $CL_BG      $CL_BG      $CL_CUR  $CL_BG      $CL_BG
-#client.urgent           $CL_RED     $CL_RED     $CL_BG   $CL_RED     $CL_RED
-#client.placeholder      $CL_BG      $CL_BG      $CL_WHITE $CL_BLACK  $CL_BG
-
-#colors from Xresources, set by wal
-# defaults are as follows:
-#  color0 = black
-#	1 = dark pink-ish
-#	2 = tan/kakhi with *hint* of orange/brown
-#	3 = indigo
-#	4 = lighter indigo
-#	5 = blue
-#	6 = magenta
-#	7 = light magenta
-#	8 = gray / magenta
-#	9 = opaque/soft  gray/red-ish
-#	10= gray / orangeish
-#	11= purple/blue/indigo
-#	12= soft indigo
-#	13= blue
-#	14= magenta (soft)
-#	15= magenta (light)
-set_from_resource $CL_0 i3wm.color0 #150C1E
-set_from_resource $CL_1 i3wm.color1 #A14E61
-set_from_resource $CL_2 i3wm.color2 #A88D7C
-set_from_resource $CL_3 i3wm.color3 #513591
-set_from_resource $CL_4 i3wm.color4 #615399
-set_from_resource $CL_5 i3wm.color5 #484BC2
-set_from_resource $CL_6 i3wm.color6 #985E9E
-set_from_resource $CL_7 i3wm.color7 #D59FD5
-set_from_resource $CL_8 i3wm.color8 #956f95
-set_from_resource $CL_9 i3wm.color9 #A14E61
-set_from_resource $CL_10 i3wm.color10 #A88D7C
-set_from_resource $CL_11 i3wm.color11 #513591
-set_from_resource $CL_12 i3wm.color12 #615399
-set_from_resource $CL_13 i3wm.color13 #484BC2
-set_from_resource $CL_14 i3wm.color14 #985E9E
-set_from_resource $CL_15 i3wm.color15 #D59FD5
-set_from_resource $CL_FG i3wm.color7 #f0f0f0
-set_from_resource $CL_BG i3wm.color2 #000000
-
+#primary colorscheme
+set $CL_PRI #2039db
+set $CL_SEC #f6f918
+set $CL_FG  #ffffff
+set $CL_BG  #000000
+set $CL_ALT #db2020
+set $CL_GREEN #32a51d
 #class                  border   background   text     indicator   child_border
-client.focused          $CL_9    $CL_11       $CL_FG    $CL_5      $CL_9
-client.focused_inactive $CL_0    $CL_11       $CL_FG    $CL_5      $CL_6
-client.unfocused        $CL_0    $CL_0        $CL_1     $CL_5      $CL_6
-client.urgent           $CL_RED  $CL_RED      $CL_RED   $CL_RED    $CL_RED
+client.focused          $CL_PRI   $CL_BG      $CL_SEC   $CL_PRI    $CL_SEC
+client.focused_inactive $CL_PRI   $CL_BG      $CL_SEC   $CL_PRI    $CL_PRI
+client.unfocused        $CL_PRI   $CL_BG      $CL_FG    $CL_PRI    $CL_PRI
+client.urgent           $CL_ALT   $CL_ALT     $CL_ALT   $CL_ALT    $CL_ALT
 
 # Bar setup
 bar {
@@ -210,7 +158,6 @@ bar {
     mode invisible
 }
 exec_always --no-startup-id /home/tom/.config/polybar/launch.sh
-exec --no-startup-id compton --config /home/tom/.config/compton.conf -b
 
 # Remove border while only one window opens
 smart_borders on
