@@ -94,16 +94,16 @@ define-command -params 1 -hidden doc-render %{
     doc-parse-anchors
 
     # Join paragraphs together
-    try %{ execute-keys -draft \%S \n{2,}|(?<=\+)\n|^[^\n]+::\n <ret> <a-K>^-{2,}(\n|\z)<ret> S\n\z<ret> <a-k>\n<ret> <a-j> }
+    try %{ execute-keys -draft \%S \n{2,}|(?<=\+)\n|^[^\n]+::\n|\n\h*[-*] <ret> <a-K>^-{2,}(\n|\z)<ret> S\n\z<ret> <a-k>\n<ret> <a-j> }
 
     # Remove some line end markers
     try %{ execute-keys -draft \%s \h*(\+|:{2,})$ <ret> d }
 
     # Setup the doc_render_ranges option
     set-option buffer doc_render_ranges %val{timestamp}
-    doc-render-regex \B(?<!\\)\*[^\n]+?(?<!\\)\*\B \A|.\z 'H' default+b
-    doc-render-regex \b(?<!\\)_[^\n]+?(?<!\\)_\b \A|.\z 'H' default+i
-    doc-render-regex \B(?<!\\)`[^\n]+?(?<!\\)`\B \A|.\z 'H' mono
+    doc-render-regex \B(?<!\\)\*(?=\S)[^\n]+?(?<=\S)(?<!\\)\*\B \A|.\z 'H' default+b
+    doc-render-regex \b(?<!\\)_(?=\S)[^\n]+?(?<=\S)(?<!\\)_\b \A|.\z 'H' default+i
+    doc-render-regex \B(?<!\\)`(?=\S)[^\n]+?(?<=\S)(?<!\\)`\B \A|.\z 'H' mono
     doc-render-regex ^=\h+[^\n]+ ^=\h+ '~' title
     doc-render-regex ^={2,}\h+[^\n]+ ^={2,}\h+ '' header
     doc-render-regex ^-{2,}\n.*?^-{2,}\n ^-{2,}\n '' block

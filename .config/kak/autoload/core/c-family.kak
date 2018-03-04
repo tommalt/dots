@@ -133,7 +133,7 @@ define-command -hidden c-family-insert-on-newline %[ evaluate-commands -draft %[
 
         printf %s\\n '
             add-highlighter shared/ regions -default code -match-capture FT \
-                string %{MAYBEAT(?<!QUOTE)"} %{(?<!\\)(?:\\\\)*"} "" \
+                string %{MAYBEAT(?<!QUOTE)(?<!QUOTE\\)"} %{(?<!\\)(?:\\\\)*"} "" \
                 string %{R"([^(]*)\(} %{\)([^)]*)"} "" \
                 comment /\* \*/ "" \
                 comment // $ "" \
@@ -322,6 +322,7 @@ define-command -hidden c-family-insert-include-guards %{
         esac
     }
 }
+
 hook -group c-family-insert global BufNewFile .*\.(h|hh|hpp|hxx|H) c-family-insert-include-guards
 
 declare-option -docstring "colon separated list of path in which header files will be looked for" \
