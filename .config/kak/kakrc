@@ -12,3 +12,5 @@ set-option global indentwidth 0
 
 set-option global termcmd 'urxvt -e sh -c'
 set global ui_options ncurses_assistant=dilbert
+
+colorscheme github
