@@ -638,7 +638,7 @@
 ## still be downloaded by clicking the download button in the pdf.js
 ## viewer.
 ## Type: Bool
-# c.content.pdfjs = False
+c.content.pdfjs = True
 
 ## Enable plugins in Web pages.
 ## Type: Bool
@@ -718,7 +718,7 @@
 ## handler is used. Any `{}` in the string will be expanded to the
 ## filename, else the filename will be appended.
 ## Type: String
-# c.downloads.open_dispatcher = None
+c.downloads.open_dispatcher = "rifle"
 
 ## Where to show the downloaded files.
 ## Type: VerticalPosition
