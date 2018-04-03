@@ -14,4 +14,4 @@ set-option global termcmd 'urxvt -e sh -c'
 set global ui_options ncurses_assistant=dilbert
 
 alias global colo colorscheme
-colorscheme dracula
+colorscheme base16_grayscale
