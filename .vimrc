@@ -22,7 +22,7 @@ command W w !sudo tee % > /dev/null
 set number
 set ttyfast
 set so=2        " buffer when scrolling
-set textwidth=80
+"set textwidth=80
 set lazyredraw
 
 set splitbelow
