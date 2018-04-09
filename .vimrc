@@ -43,7 +43,7 @@ set whichwrap+=<,>,h,l
 set hlsearch
 
 syntax enable 
-colorscheme hydrangea
+colorscheme black_white
 set background=dark
 
 set encoding=utf8
