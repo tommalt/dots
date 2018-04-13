@@ -7,7 +7,7 @@
 ![Emacs2](assets/bsv-emacs.png)
 ### [The Marias](https://www.themarias.us/)
 ![marias](assets/marias.png)
-### A whole lotta magenta
+### A whole lotta magenta; gtop, Kakoune, cmus, alsamixer, neofetch
 ![purple](assets/rice-purple2.png)
 
 ## List of Programs and Software used
