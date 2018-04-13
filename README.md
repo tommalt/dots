@@ -1,7 +1,7 @@
 # My .dotfiles
 ## Screenshots
 
-### cmus, Gnu Emacs, neofetch, stat(2)
+### cmus, GNU Emacs, neofetch, stat(2)
 ![Emacs1](assets/emacs.png)
 ### more emacs
 ![Emacs2](assets/bsv-emacs.png)
