@@ -22,7 +22,6 @@ command W w !sudo tee % > /dev/null
 set number
 set ttyfast
 set so=2        " buffer when scrolling
-"set textwidth=80
 set lazyredraw
 
 set splitbelow
@@ -31,7 +30,6 @@ set splitright
 set wildmenu
 set wildignore=*.o,*~,*.pyc,*.exe,*.so
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-set cmdheight=2
 
 " A buffer becomes hidden when it is abandoned
 set hid
@@ -41,10 +39,7 @@ set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
 set hlsearch
-
-syntax enable 
-colorscheme black_white
-set background=dark
+colorscheme plain
 
 set encoding=utf8
 set ffs=unix,dos,mac
