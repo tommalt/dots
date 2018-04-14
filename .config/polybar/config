@@ -9,13 +9,14 @@
 ;=====================================================
 
 [colors]
-background = #000000
+background = #050704
 background-alt = #ffffff
 grey = #99989b
 darkgrey = #4f4f4f
-foreground = #ffffff
-primary = #2039DB
-secondary = #f6f918
+foreground = #d2e3eb
+primary = ${self.foreground}
+secondary = #5b645f
+alt = #489588
 alert = #db2020
 green = #32a51d
 uline = ${self.primary}
@@ -46,9 +47,10 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = Wuncon Siji:pixelsize=9;1
 font-3 = Inconsolata:pixelsize=10:weight=bold;0
 
-modules-left = i3 cmus alsa
+modules-left = i3 alsa
 modules-center = xwindow
-modules-right = wlan filesystem cputemp cpu memory date exitmenu
+modules-right = wlan cputemp date exitmenu
+;modules-right = wlan filesystem cputemp cpu memory date exitmenu
 
 tray-position = right
 tray-padding = 0
@@ -68,8 +70,6 @@ mount-0 = /
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.alert}
-label-mounted-underline = ${colors.uline}
-label-unmounted-underline = ${colors.uline}
 label-mounted-font = 4
 label-unmounted-font = 4
 
@@ -78,7 +78,6 @@ type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.primary}
-label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -108,7 +107,6 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.darkgrey}
-label-focused-underline = ${colors.foreground}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -118,7 +116,6 @@ label-unfocused-padding = 2
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
@@ -142,7 +139,6 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.alert}
-format-underline = ${colors.uline}
 label = %percentage%%
 
 [module/memory]
@@ -150,7 +146,6 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.secondary}
-format-underline = ${colors.uline}
 label = %percentage_used%%
 
 [module/wlan]
@@ -159,13 +154,11 @@ interface = wlp2s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.uline}
-label-connected = %essid% %local_ip%
+label-connected = %essid%
 label-connected-font = 4
-label-connected-foreground = ${colors.green}
+label-connected-foreground = ${colors.alt}
 
 format-disconnected = <label-disconnected>
-format-disconnected-underline = ${colors.alert}
 label-disconnected = %ifname% disconnected
 label-disconnected-font = 4
 label-disconnected-foreground = ${colors.alert}
@@ -181,35 +174,28 @@ ramp-signal-foreground = ${colors.primary}
 type = internal/date
 interval = 5
 
-date = " %a, %b %d, %Y"
-;date-alt = " %a, %b %d, %Y at %I:%M%p"
-;date-alt = " %Y-%m-%d"
-time = " at %I:%M%p"
-;time-alt = %H:%M:%S
-format-prefix = 
-format-prefix-foreground = ${colors.foreground}
-format-underline = ${colors.uline}
+date = " %D"
+time = "%I:%M%p"
 label = %date% %time%
 label-font = 4
 
 [module/alsa]
 type = internal/alsa
 format-volume = <label-volume> <bar-volume>
-label-volume = Volume
+label-volume = ""
 label-volume-foreground = ${colors.foreground}
 label-volume-font = 4
-
 format-muted-prefix = " "
 label-muted = sound muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = ${colors.secondary}
-bar-volume-foreground-1 = ${colors.secondary}
-bar-volume-foreground-2 = ${colors.secondary}
-bar-volume-foreground-3 = ${colors.secondary}
-bar-volume-foreground-4 = ${colors.secondary}
-bar-volume-foreground-5 = ${colors.secondary}
-bar-volume-foreground-6 = ${colors.secondary}
+bar-volume-foreground-0 = ${colors.alt}
+bar-volume-foreground-1 = ${colors.alt}
+bar-volume-foreground-2 = ${colors.alt}
+bar-volume-foreground-3 = ${colors.alt}
+bar-volume-foreground-4 = ${colors.alt}
+bar-volume-foreground-5 = ${colors.alt}
+bar-volume-foreground-6 = ${colors.alt}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 4
@@ -217,22 +203,21 @@ bar-volume-fill = =
 bar-volume-fill-font = 4
 bar-volume-empty = -
 bar-volume-empty-font = 4
-bar-volume-empty-foreground = ${colors.alert}
+bar-volume-empty-foreground = ${colors.secondary}
 
 [module/cputemp]
 type = custom/script
 exec = ~/.config/polybar/temperature.sh
 interval = 60
 format = <label>
-format-underline = ${colors.uline}
 label-font = 4
 
 [module/exitmenu]
 type = custom/menu
-label-open = DIE
+label-open = exit
 label-open-font = 4
 label-open-foreground = ${colors.foreground}
-menu-0-0 = DIE
+menu-0-0 = exit
 menu-0-0-exec = i3-msg exit
 menu-0-0-font = 4
 menu-0-0-foreground = ${colors.foreground}
