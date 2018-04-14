@@ -12,10 +12,12 @@ URxvt*iso14755_52: False
 !colors
 emacs*foreground:   #d59fd5
 emacs*background:   #150c1e
-URxvt*foreground:   #ffffff
-URxvt*background:   #000000
-! Set depth to make transparency work.
+! URxvt colors and transparency.
+URxvt*inheritPixmap: true
+URxvt*transparent: true
+URxvt*shading: 65
 URxvt*depth: 32
+URxvt*foreground: #fefefe
 
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
