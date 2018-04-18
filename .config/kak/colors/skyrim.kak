@@ -1,0 +1,50 @@
+# Kakouen skyrim colorscheme
+
+# For Code
+face value white
+face type white
+face variable white
+face module white
+face function white
+face string white
+face keyword white
+face operator white
+face attribute white
+face comment white
+face meta white
+face builtin white
+
+# For Markup
+face title white
+face header white
+face bold white
+face italic white
+face mono white
+face block white
+face link white
+face bullet white
+face list white
+
+# builtin faces
+face Default default,default
+face PrimarySelection white,blue
+face SecondarySelection black,blue
+face PrimaryCursor black,white
+face SecondaryCursor black,white
+face PrimaryCursorEol black,cyan
+face SecondaryCursorEol black,cyan
+face LineNumbers default,default
+face LineNumberCursor default,default+r
+face MenuForeground white,blue
+face MenuBackground blue,white
+face MenuInfo cyan
+face Information black,yellow
+face Error black,red
+face StatusLine cyan,default
+face StatusLineMode yellow,default
+face StatusLineInfo blue,default
+face StatusLineValue green,default
+face StatusCursor black,cyan
+face Prompt yellow,default
+face MatchingChar default,default+b
+face BufferPadding blue,default
