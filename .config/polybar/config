@@ -49,7 +49,7 @@ font-3 = Hack:pixelsize=9:weight=bold;0
 
 modules-left = i3 alsa
 modules-center = xwindow
-modules-right = wlan cputemp date exitmenu
+modules-right = wlan date battery exitmenu
 ;modules-right = wlan filesystem cputemp cpu memory date exitmenu
 
 tray-position = right
