@@ -140,17 +140,19 @@ bindsym XF86HomePage exec --no-startup-id $browser https://www.archlinux.org/
 font pango:Inconsolata 12px
 
 #primary colorscheme
-set $CL_PRI #2039db
-set $CL_SEC #f6f918
+set $CL_PRI #537387
+set $CL_SEC #151A13
+set $CL_TXTS #fefefe
+set $CL_TXT #CBD5DF
 set $CL_FG  #ffffff
 set $CL_BG  #000000
 set $CL_ALT #db2020
 set $CL_GREEN #32a51d
 #class                  border   background   text     indicator   child_border
-client.focused          $CL_PRI   $CL_BG      $CL_SEC   $CL_PRI    $CL_SEC
-client.focused_inactive $CL_PRI   $CL_BG      $CL_SEC   $CL_PRI    $CL_PRI
-client.unfocused        $CL_PRI   $CL_BG      $CL_FG    $CL_PRI    $CL_PRI
-client.urgent           $CL_ALT   $CL_ALT     $CL_ALT   $CL_ALT    $CL_ALT
+client.focused          $CL_PRI   $CL_BG      $CL_TXTS $CL_PRI    $CL_PRI
+client.focused_inactive $CL_SEC   $CL_BG      $CL_TXT  $CL_PRI    $CL_SEC
+client.unfocused        $CL_SEC   $CL_BG      $CL_TXT  $CL_PRI    $CL_SEC
+client.urgent           $CL_ALT   $CL_ALT     $CL_ALT  $CL_ALT    $CL_ALT
 
 # Bar setup
 bar {

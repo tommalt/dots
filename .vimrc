@@ -28,7 +28,6 @@ set splitright
 set wildmenu
 set wildignore=*.o,*~,*.pyc,*.exe,*.so
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-set cmdheight=2
 
 " A buffer becomes hidden when it is abandoned
 set hid
@@ -38,9 +37,7 @@ set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
 set hlsearch
-
-syntax enable 
-set background=dark
+colorscheme plain
 
 set encoding=utf8
 set ffs=unix,dos,mac
