@@ -17,7 +17,6 @@ URxvt*inheritPixmap: true
 URxvt*transparent: true
 URxvt*shading: 65
 URxvt*depth: 32
-URxvt*foreground: #fefefe
 
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
