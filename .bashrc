@@ -25,6 +25,14 @@ alias gco="git checkout"
 alias l="ls -lah"
 alias ll="ls -lh"
 
+em () {
+	if [ $# -eq 0 ]; then
+		emacsclient -c &
+	else
+		emacsclient -c "$@" &
+	fi
+}
+
 # 'syncing' directories between terminal sessions
 cd () {
 	if [ $# -ne 0 ] && [ ! -z $1 ]; then
