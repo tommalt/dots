@@ -24,6 +24,9 @@
 (require 'setup-cedet)
 (require 'setup-editing)
 
+;; prevent emacs from freezing when pressing Ctrl+z
+(global-unset-key (kbd "C-z"))
+
 (defun kill-all-buffers()
   (interactive)
   (mapc 'kill-buffer (buffer-list)))
@@ -37,7 +40,7 @@
       (menu-bar-mode -1)
       (tool-bar-mode -1)
       (scroll-bar-mode -1)
-      )))
+      ))
 
 ;; do not use annoying backup files
 (setq make-backup-files nil)
