@@ -39,7 +39,7 @@ set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
 set hlsearch
-colorscheme plain
+colorscheme netbsd
 
 set encoding=utf8
 set ffs=unix,dos,mac

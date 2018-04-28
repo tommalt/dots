@@ -5,7 +5,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='[\u@\h \W]\$ '
+#PS1='[\u@\h \W]\$ '
+bold="\[$(tput bold)\]"
+reset="\[$(tput sgr0)\]"
+orange="\[$(tput setf 214)\]"
+PS1="[\u@\h $bold$orange\w$reset]\$ "
 
 shopt -s autocd #cd into dir w/o typing cd
 
