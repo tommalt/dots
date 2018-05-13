@@ -77,3 +77,6 @@ cdh () {
 
 # cursor color, if applicable
 [[ -f "${HOME}/.cache/wal/sequences" ]] && cat "${HOME}/.cache/wal/sequences"
+
+# gruvbox 256 palette
+[[ -f "${HOME}/.vim/bundle/gruvbox/gruvbox_256palette.sh" ]] && source "${HOME}/.vim/bundle/gruvbox/gruvbox_256palette.sh"
