@@ -29,6 +29,10 @@ alias gco="git checkout"
 alias l="ls -lah"
 alias ll="ls -lh"
 
+# sbcl with readline support
+alias sbci="rlwrap sbcl"
+alias ci="rlwrap csi"
+
 em () {
 	if [ $# -eq 0 ]; then
 		emacsclient -c &
