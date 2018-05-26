@@ -61,6 +61,7 @@ au! FileType python setl nosmartindent
 au! FileType html setl shiftwidth=2 tabstop=2 expandtab
 autocmd FileType haskell setl shiftwidth=8 tabstop=8 expandtab
 autocmd FileType cabal setl shiftwidth=8 tabstop=8 expandtab
+autocmd FileType scheme setl shiftwidth=2 tabstop=2 expandtab
 
 "auto/smart indent
 set ai
