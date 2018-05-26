@@ -138,5 +138,3 @@ nnoremap <space> :
 
 " CHICKEN scheme
 let b:is_chicken=1
-
-setl complete+=,k~/.chicken/scheme-word-list
