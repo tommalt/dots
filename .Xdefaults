@@ -13,10 +13,6 @@ URxvt*iso14755_52: False
 emacs*foreground:   #d59fd5
 emacs*background:   #150c1e
 ! URxvt colors and transparency.
-URxvt*inheritPixmap: true
-URxvt*transparent: true
-URxvt*shading: 65
-URxvt*depth: 32
 URxvt*foreground: #fefefe
 URxvt*background: #000000
 
