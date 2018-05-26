@@ -135,3 +135,8 @@ vmap <C-v> c<Esc>"+p
 imap <C-v> <C-r><C-o>+
 
 nnoremap <space> :
+
+" CHICKEN scheme
+let b:is_chicken=1
+
+setl complete+=,k~/.chicken/scheme-word-list
