@@ -61,7 +61,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (auto-complete evil buffer-move slime zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit counsel-projectile company clean-aindent-mode anzu smart-tabs-mode))))
+    (paredit geiser evil buffer-move slime zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit counsel-projectile company clean-aindent-mode anzu smart-tabs-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -115,3 +115,10 @@
 (define-key evil-normal-state-map (kbd "<C-r>") 'isearch-backward)
 ;; when sliming
 (evil-set-initial-state 'slime-repl 'emacs)
+
+;; Scheme!
+(require 'geiser)
+
+;; do not skip to stupid debug buffer after compiling scheme source
+(setq geiser-debug-jump-to-debug-p nil)
+(setq geiser-debug-show-debug-p nil)
