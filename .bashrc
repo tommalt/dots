@@ -33,6 +33,8 @@ alias ll="ls -lh"
 alias sbci="rlwrap sbcl"
 alias ci="rlwrap csi"
 
+alias chicken-doc-ls="ls /usr/share/chicken/chicken-doc/root"
+
 em () {
 	if [ $# -eq 0 ]; then
 		emacsclient -c &
