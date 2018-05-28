@@ -137,5 +137,9 @@ imap <C-v> <C-r><C-o>+
 
 nnoremap <space> :
 
+" emacs style EOL movement in insert mode
+inoremap <C-a> <C-O>I
+inoremap <C-e> <C-O>A
+
 " CHICKEN scheme
 let b:is_chicken=1
