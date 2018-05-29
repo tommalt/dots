@@ -40,11 +40,13 @@ set whichwrap+=<,>,h,l
 
 set hlsearch
 syntax on
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark=1
-let g:gruvbox_italicize_strings=1
-let g:gruvbox_invert_selection=0
-colorscheme gruvbox
+" let g:gruvbox_italic=1
+" let g:gruvbox_contrast_dark=1
+" let g:gruvbox_italicize_strings=1
+" let g:gruvbox_invert_selection=0
+" colorscheme gruvbox
+colorscheme acme
+
 
 set encoding=utf8
 set ffs=unix,dos,mac
