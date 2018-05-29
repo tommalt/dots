@@ -108,7 +108,7 @@ set $dec --no-startup-id amixer -q set Master 5%-
 set $mute --no-startup-id amixer -q set Master toggle
 
 #cmus control
-set $music --no-startup-id urxvt -e cmus
+set $music --no-startup-id st -e cmus
 set $pause --no-startup-id cmus-remote -u
 set $prev --no-startup-id cmus-remote -r
 set $next --no-startup-id cmus-remote -n
