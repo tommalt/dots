@@ -25,6 +25,7 @@ alias gco="git checkout"
 alias l="ls -lah"
 alias ll="ls -lh"
 
+alias chicken-doc-ls="ls /usr/share/chicken/chicken-doc/root"
 # 'syncing' directories between terminal sessions
 cd () {
 	if [ $# -ne 0 ] && [ ! -z $1 ]; then
@@ -65,3 +66,6 @@ cdh () {
 
 # cursor color, if applicable
 [[ -f "${HOME}/.cache/wal/sequences" ]] && cat "${HOME}/.cache/wal/sequences"
+
+# gruvbox 256 palette
+[[ -f "${HOME}/.vim/bundle/gruvbox/gruvbox_256palette.sh" ]] && source "${HOME}/.vim/bundle/gruvbox/gruvbox_256palette.sh"

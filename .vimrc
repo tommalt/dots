@@ -1,4 +1,4 @@
-execute pathogen#infect()
+call pathogen#infect()
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -39,7 +39,14 @@ set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
 set hlsearch
-colorscheme plain
+syntax on
+" let g:gruvbox_italic=1
+" let g:gruvbox_contrast_dark=1
+" let g:gruvbox_italicize_strings=1
+" let g:gruvbox_invert_selection=0
+" colorscheme gruvbox
+colorscheme acme
+
 
 set encoding=utf8
 set ffs=unix,dos,mac
@@ -56,6 +63,7 @@ au! FileType python setl nosmartindent
 au! FileType html setl shiftwidth=2 tabstop=2 expandtab
 autocmd FileType haskell setl shiftwidth=8 tabstop=8 expandtab
 autocmd FileType cabal setl shiftwidth=8 tabstop=8 expandtab
+autocmd FileType scheme setl shiftwidth=2 tabstop=2 expandtab
 
 "auto/smart indent
 set ai
@@ -130,3 +138,10 @@ vmap <C-v> c<Esc>"+p
 imap <C-v> <C-r><C-o>+
 
 nnoremap <space> :
+
+" emacs style EOL movement in insert mode
+inoremap <C-a> <C-O>I
+inoremap <C-e> <C-O>A
+
+" CHICKEN scheme
+let b:is_chicken=1

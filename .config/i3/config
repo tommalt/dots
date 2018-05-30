@@ -128,8 +128,8 @@ bindsym $mod+period exec $begin
 exec --no-startup-id /home/tom/bin/menu-key.sh
 exec --no-startup-id xset r rate 175 30
 exec --no-startup-id setxkbmap -option ctrl:swapcaps
-exec_always --no-startup-id /home/tom/bin/i3-set-background
 exec --no-startup-id nm-applet
+exec --no-startup-id i3-set-background "#bfdede"
 
 # dmenu, and application shortcuts
 bindsym $mod+d exec --no-startup-id dmenu_run -nb Black -sb "$CL_PRI" -l 10
@@ -183,12 +183,23 @@ for_window [instance="dropdown"] resize set 625 400
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pixel 5
 
+# irc
+for_window [instance="irc"] floating enable
+for_window [instance="irc"] move scratchpad
+for_window [instance="irc"] border pixel 5
+
+# calculator
 exec --no-startup-id $term -name calculator -e R -q
 bindsym $mod+p [instance="calculator"] scratchpad show; [instance="calculator"] move position center
 bindsym XF86Calculator [instance="calculator"] scratchpad show; [instance="calculator"] move position center
 
+# scratch shell (in tmux)
 exec --no-startup-id $term -name dropdown -e tmux
 bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+
+# irc
+exec --no-startup-id xterm -name irc -e weechat
+bindsym $mod+shift+i [instance="irc"] scratchpad show
 
 #i3 gaps
 for_window [class="^.*"] border pixel 1
