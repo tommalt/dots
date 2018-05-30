@@ -16,7 +16,7 @@ darkgrey = #4f4f4f
 foreground = #d2e3eb
 primary = ${self.foreground}
 secondary = #5b645f
-alt = #489588
+alt = #bfdede
 alert = #db2020
 green = #32a51d
 uline = ${self.primary}
@@ -45,7 +45,9 @@ module-margin-right = 2
 font-0 = mono:pixelsize=9;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = Wuncon Siji:pixelsize=9;1
-font-3 = Hack:pixelsize=9:weight=bold;0
+;font-3 = ' xos4 Terminus':pixelsize=9
+;font-3 = Hack:pixelsize=8:weight=bold;0
+font-3 = Inconsolata:size=9:weight=bold
 
 modules-left = i3 alsa
 modules-center = xwindow
