@@ -12,6 +12,8 @@ PS1="[\u@\h $bold\w$reset]\$ "
 
 shopt -s autocd #cd into dir w/o typing cd
 
+alias mk="make"
+
 alias gst="git status"
 alias glo="git log --oneline"
 alias glog="git log --oneline --decorate --graph"
