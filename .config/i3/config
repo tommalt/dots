@@ -129,6 +129,7 @@ exec --no-startup-id /home/tom/bin/menu-key.sh
 exec --no-startup-id xset r rate 175 30
 exec --no-startup-id setxkbmap -option ctrl:swapcaps
 exec --no-startup-id i3-set-background "#bfdede"
+exec --no-startup-id redshift &
 
 # dmenu, and application shortcuts
 bindsym $mod+d exec --no-startup-id dmenu_run -nb Black -sb "$CL_PRI" -l 10
