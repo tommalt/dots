@@ -1,9 +1,11 @@
 DEFAULT_WM=i3
-xrdb ~/.Xresources
 
 case $wm in
 i3)
 	exec i3
+	;;
+xfce)
+	exec startxfce4
 	;;
 dwm)
 	exec dwm
