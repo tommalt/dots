@@ -32,7 +32,7 @@ alias ll="ls -lh"
 
 # sbcl with readline support
 alias sbci="rlwrap sbcl"
-alias ci="rlwrap csi"
+alias tsi="rlwrap tinyscheme"
 
 alias chicken-doc-ls="ls /usr/share/chicken/chicken-doc/root"
 
