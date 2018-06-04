@@ -38,6 +38,8 @@ set hid
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
+" do not jump to the top of file when searching
+set nowrapscan
 set hlsearch
 syntax on
 " let g:gruvbox_italic=1
