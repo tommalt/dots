@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-char font[] = " xos4 Terminus:pixelsize=12";
+char font[] = "Inconsolata";
 int borderpx = 2;
 
 /*
