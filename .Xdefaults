@@ -15,6 +15,7 @@ emacs*background:   #150c1e
 ! URxvt colors (acme)
 URxvt*background: #ffffeb
 URxvt*foreground: #000000
+XTerm.vt100.reverseVideo: true
 
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true

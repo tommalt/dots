@@ -1,4 +1,15 @@
 #!/bin/bash
-f=$(cat ~/.cache/wal/wal)
-feh --bg-max "$f"
 
+if [ -e ~/.cache/wal/wal ]; then
+	f=`cat ~/.cache/wal/wal`
+	feh --bg-max "$f"
+else
+	if [ $# -eq 1 ]; then
+		color="$1"
+	else
+		color="#303030"
+	fi
+	xsetroot -solid "$color"
+fi
+
+exit 0
