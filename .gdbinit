@@ -2234,6 +2234,10 @@ set print array off
 set print array-indexes on
 set python print-stack full
 
+# making debugging with popen possible
+set follow-fork-mode parent
+set detach-on-fork on
+
 # Start ------------------------------------------------------------------------
 
 python Dashboard.start()
