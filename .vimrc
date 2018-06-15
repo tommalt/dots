@@ -38,17 +38,12 @@ set hid
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
+if &term =~ '256color'
+	set t_ut=
+endif
 " do not jump to the top of file when searching
 set nowrapscan
 set hlsearch
-syntax on
-" let g:gruvbox_italic=1
-" let g:gruvbox_contrast_dark=1
-" let g:gruvbox_italicize_strings=1
-" let g:gruvbox_invert_selection=0
-" colorscheme gruvbox
-colorscheme acme
-
 
 set encoding=utf8
 set ffs=unix,dos,mac
