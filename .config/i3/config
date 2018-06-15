@@ -6,7 +6,7 @@
 
 set $mod Mod4
 
-set $term st
+set $term urxvt
 set $browser /usr/bin/qutebrowser
 set $INTERACTIVE_SHELL /bin/bash
 bindsym $mod+Return exec --no-startup-id $term -e $INTERACTIVE_SHELL
@@ -108,7 +108,7 @@ set $dec --no-startup-id amixer -q set Master 5%-
 set $mute --no-startup-id amixer -q set Master toggle
 
 #cmus control
-set $music --no-startup-id st -e cmus
+set $music --no-startup-id urxvt -e cmus
 set $pause --no-startup-id cmus-remote -u
 set $prev --no-startup-id cmus-remote -r
 set $next --no-startup-id cmus-remote -n
@@ -128,7 +128,7 @@ bindsym $mod+period exec $begin
 exec --no-startup-id /home/tom/bin/menu-key.sh
 exec --no-startup-id xset r rate 175 30
 exec --no-startup-id setxkbmap -option ctrl:swapcaps
-exec --no-startup-id i3-set-background "#bfdede"
+exec --no-startup-id feh --bg-max ~/Pictures/backgrounds/bw-flower.jpg --image-bg "#D0D0D0"
 exec --no-startup-id redshift &
 
 # dmenu, and application shortcuts
