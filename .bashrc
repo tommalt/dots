@@ -30,8 +30,9 @@ alias gco="git checkout"
 alias l="ls -lah"
 alias ll="ls -lh"
 
-# sbcl with readline support
+# readline support for lisp
 alias sbci="rlwrap sbcl"
+alias ccli="rlwrap ccl"
 alias tsi="rlwrap tinyscheme"
 
 alias chicken-doc-ls="ls /usr/share/chicken/chicken-doc/root"
