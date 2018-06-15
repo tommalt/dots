@@ -13,8 +13,9 @@ URxvt*iso14755_52: False
 emacs*foreground:   #d59fd5
 emacs*background:   #150c1e
 ! URxvt colors (acme)
-URxvt*background: #ffffeb
-URxvt*foreground: #000000
+URxvt*background: #000000
+URxvt*foreground: #ededed
+!URxvt*foreground: #fefefe
 
 XTerm.vt100.reverseVideo: true
 
@@ -25,9 +26,7 @@ URxvt*scrollTtyKeypress: true
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
-URxvt.font: xft:Inconsolata:size=10
-!URxvt.font: xft:Hack:size=9
-URxvt.letterSpace: -1
+URxvt.font: -misc-tamsyn-medium-r-normal--14-101-100-100-c-70-iso8859-1
 
 URxvt.scrollBar: false
 URxvt.cursorBlink: 1
