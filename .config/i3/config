@@ -127,7 +127,6 @@ bindsym $mod+period exec $begin
 
 exec --no-startup-id /home/tom/bin/menu-key.sh
 exec --no-startup-id xset r rate 175 30
-exec --no-startup-id setxkbmap -option ctrl:swapcaps
 exec --no-startup-id feh --bg-fill ~/Pictures/backgrounds/bw-flower.jpg --image-bg "#D0D0D0"
 exec --no-startup-id redshift &
 
