@@ -1,5 +1,4 @@
 DEFAULT_WM=i3
-xrdb ~/.Xresources
 
 case $wm in
 i3)

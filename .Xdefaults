@@ -24,9 +24,7 @@ URxvt*scrollTtyKeypress: true
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
-URxvt.font: xft:Inconsolata:size=10
-!URxvt.font: xft:Hack:size=9
-URxvt.letterSpace: -1
+URxvt.font: -misc-tamsyn-medium-r-normal--14-101-100-100-c-70-iso8859-1
 
 URxvt.scrollBar: false
 URxvt.cursorBlink: 1

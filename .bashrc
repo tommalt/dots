@@ -24,10 +24,24 @@ alias gb="git branch"
 alias gba="git branch -a"
 alias gco="git checkout"
 
-alias l="ls -lah"
-alias ll="ls -lh"
+alias l="ls --color=auto -lah"
+alias ll="ls --color=auto -lh"
+
+# readline support for lisp
+alias sbci="rlwrap sbcl"
+alias ccli="rlwrap ccl"
+alias tsi="rlwrap tinyscheme"
 
 alias chicken-doc-ls="ls /usr/share/chicken/chicken-doc/root"
+
+em () {
+	if [ $# -eq 0 ]; then
+		emacsclient -c &
+	else
+		emacsclient -c "$@" &
+	fi
+}
+
 # 'syncing' directories between terminal sessions
 cd () {
 	if [ $# -ne 0 ] && [ ! -z $1 ]; then
