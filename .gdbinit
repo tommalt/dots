@@ -2230,7 +2230,7 @@ set history save
 set confirm off
 set verbose off
 set print pretty on
-set print array off
+set print array on
 set print array-indexes on
 set python print-stack full
 
@@ -2240,7 +2240,7 @@ set detach-on-fork on
 
 # Start ------------------------------------------------------------------------
 
-python Dashboard.start()
+# python Dashboard.start()
 
 # ------------------------------------------------------------------------------
 # Copyright (c) 2015-2017 Andrea Cardaci <cyrus.and@gmail.com>
