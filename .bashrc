@@ -10,8 +10,6 @@ bold="\[$(tput bold)\]"
 reset="\[$(tput sgr0)\]"
 PS1="[\u@\h $bold\w$reset]\$ "
 
-shopt -s autocd #cd into dir w/o typing cd
-
 alias mk="make"
 
 alias gst="git status"
