@@ -45,6 +45,9 @@ endif
 set nowrapscan
 set hlsearch
 
+colorscheme blue
+syntax on
+
 set encoding=utf8
 set ffs=unix,dos,mac
 set nobackup
@@ -142,3 +145,7 @@ inoremap <C-e> <C-O>A
 
 " CHICKEN scheme
 let b:is_chicken=1
+
+" golang no stupid red highlight
+let g:go_highlight_trailing_whitespace_error=0
+map <f6> :%!goimports
