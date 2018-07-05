@@ -11,12 +11,12 @@
 [colors]
 background = #050704
 background-alt = #ffffff
-grey = #99989b
-darkgrey = #4f4f4f
-foreground = #d2e3eb
+grey = #000000
+darkgrey = #3c0853
+foreground = #21cfbc
 primary = ${self.foreground}
-secondary = #5b645f
-alt = #bfdede
+secondary = #530d49
+alt = #f74f9d
 alert = #db2020
 green = #32a51d
 uline = ${self.primary}
