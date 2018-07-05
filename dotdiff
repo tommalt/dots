@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# show diff between filesystem home/fill and dots/file
+
+if [ $# -lt 1 ]; then
+	echo "missing operand"
+	exit 1
+fi
+
+diff "/home/$USER/$1" "$1"

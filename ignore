@@ -1,4 +1,5 @@
 ignore
+dotdiff
 install.sh
 uninstall.sh
 cp-kakoune.sh
