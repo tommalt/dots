@@ -12,10 +12,9 @@ URxvt*iso14755_52: False
 !colors
 emacs*foreground:   #d59fd5
 emacs*background:   #150c1e
-! URxvt colors (acme)
-URxvt*background: #000000
-URxvt*foreground: #ededed
-!URxvt*foreground: #fefefe
+URxvt*depth: 32
+URxvt*background: [86]#000002
+URxvt*foreground: #ff6282
 
 XTerm.vt100.reverseVideo: true
 
