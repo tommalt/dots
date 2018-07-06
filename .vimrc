@@ -45,7 +45,7 @@ endif
 set nowrapscan
 set hlsearch
 
-colorscheme blue
+colorscheme valhalla
 syntax on
 
 set encoding=utf8
