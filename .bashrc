@@ -43,6 +43,16 @@ em () {
 	fi
 }
 
+# find(1) but minus .git directory
+ff() {
+	if [ $# -gt 0 ]; then
+		dir="$1"
+	else
+		dir=$PWD
+	fi
+	find "$dir" -type d -name '.git' -prune -o -type f | sed -e '/\.git$/d'
+}
+
 # 'syncing' directories between terminal sessions
 cd () {
 	if [ $# -ne 0 ] && [ ! -z $1 ]; then
