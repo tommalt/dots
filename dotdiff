@@ -18,7 +18,11 @@ if [ $# -lt 1 ]; then
 	files=`find . -type d -name 'assets' -prune -o -type f -not -iwholename "*.git*" $(printf "! -name %s " $(cat ignore)) | cut -d'/' -f2-`
 	for f in $files; do
 		tmp=`diff "/home/$USER/$f" "$f" 2>/dev/null`
+		if exclude "$f"; then
+			continue
+		fi
 		if [ $? -ne 0 ]; then
+			echo "error: diff returned non-zero for file: $f"
 			continue
 		fi
 		if [ ! -z "$tmp" ]; then
@@ -33,4 +37,9 @@ if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
 	exit 0
 fi
 
-diff "/home/$USER/$1" "$1"
+if [ -f "$1" ]; then
+	diff "/home/$USER/$1" "$1"
+else
+	echo "error: $1 is not a file"
+	exit 1
+fi
