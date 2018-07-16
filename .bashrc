@@ -7,8 +7,6 @@
 
 PS1='[\u@\h \W]\$ '
 
-shopt -s autocd #cd into dir w/o typing cd
-
 alias mk="make"
 
 alias gst="git status"
@@ -40,6 +38,16 @@ em () {
 	else
 		emacsclient -c "$@" &
 	fi
+}
+
+# find(1) but minus .git directory
+ff() {
+	if [ $# -gt 0 ]; then
+		dir="$1"
+	else
+		dir=$PWD
+	fi
+	find "$dir" -type d -name '.git' -prune -o -type f | sed -e '/\.git$/d'
 }
 
 # 'syncing' directories between terminal sessions

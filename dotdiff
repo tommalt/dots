@@ -1,0 +1,45 @@
+#!/bin/bash
+
+function usage {
+	echo "usage: ./dotdiff [FILE]"
+	echo "show diff between filesystem ~/[FILE] and ~/dots/[FILE]"
+	echo "if [FILE] is omitted, check ALL known files and"
+	echo "list the ones that differ. else, show 'diff ~/[FILE] ~/dots/[FILE]'"
+}
+
+function exclude {
+	if [[ "$1" == "README.md" ]] || [[ "$1" == "install.sh" ]] || [[ $1 == *.h ]] || [[ "$1" == "assets" ]]; then
+		return 0
+	fi
+	return 1
+}
+
+if [ $# -lt 1 ]; then
+	files=`find . -type d -name 'assets' -prune -o -type f -not -iwholename "*.git*" $(printf "! -name %s " $(cat ignore)) | cut -d'/' -f2-`
+	for f in $files; do
+		tmp=`diff "/home/$USER/$f" "$f" 2>/dev/null`
+		if exclude "$f"; then
+			continue
+		fi
+		if [ $? -ne 0 ]; then
+			echo "error: diff returned non-zero for file: $f"
+			continue
+		fi
+		if [ ! -z "$tmp" ]; then
+			echo "/home/$USER/$f"
+		fi
+	done
+	exit 0
+fi
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+	usage
+	exit 0
+fi
+
+if [ -f "$1" ]; then
+	diff "/home/$USER/$1" "$1"
+else
+	echo "error: $1 is not a file"
+	exit 1
+fi
