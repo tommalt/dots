@@ -1,5 +1,7 @@
 # see readline(3)
 set editing-mode emacs
+TAB: menu-complete
+"\e[Z": menu-complete-backward
 $if mode=vi
 
 set keymap vi-command
