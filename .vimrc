@@ -43,7 +43,10 @@ if &term =~ '256color'
 endif
 " do not jump to the top of file when searching
 set nowrapscan
-set hlsearch
+
+" center cursor when searching
+nmap n nzz
+nmap N Nzz
 
 colorscheme valhalla
 syntax on
@@ -67,7 +70,6 @@ autocmd FileType scheme setl shiftwidth=2 tabstop=2 expandtab
 
 "auto/smart indent
 set ai
-set si
 
 " Visual mode pressing * searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
@@ -121,6 +123,23 @@ function! <SID>BufcloseCloseIt()
    if buflisted(l:currentBufNum)
      execute("bdelete! ".l:currentBufNum)
    endif
+endfunction
+
+function! VisualSelection(direction, extra_filter) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", "\\/.*'$^~[]")
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'gv'
+        call CmdLine("Ack '" . l:pattern . "' " )
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
 endfunction
 
 " Moving lines up or down with CTRL-SHIFT[k/j]
