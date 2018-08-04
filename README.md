@@ -3,7 +3,6 @@
 
 ### Setup 1: valhalla
 ![valhalla-cmus](assets/valhalla-cmus.png)
-![valhalla-arch](assets/valhalla-arch.png)
 ![valhalla-1](assets/valhalla-muse.png)
 
 ### Setup 2: ACME
