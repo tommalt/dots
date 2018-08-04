@@ -14,7 +14,7 @@ emacs*foreground:   #d59fd5
 emacs*background:   #150c1e
 URxvt*depth: 32
 URxvt*background: [86]#000002
-URxvt*foreground: #ff6282
+URxvt*foreground: #d4d8d8
 
 XTerm.vt100.reverseVideo: true
 
