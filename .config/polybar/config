@@ -12,11 +12,11 @@
 background = #050704
 background-alt = #ffffff
 grey = #000000
-darkgrey = #3c0853
-foreground = #f52d7f
+darkgrey = #333029
+foreground = #e5d1a7
 primary = ${self.foreground}
-secondary = #3c0853
-alt = #f52d7f
+secondary = #d4d8d8
+alt = #d4d8d8
 alert = #db2020
 green = #32a51d
 uline = ${self.primary}
@@ -205,7 +205,7 @@ bar-volume-fill = =
 bar-volume-fill-font = 4
 bar-volume-empty = -
 bar-volume-empty-font = 4
-bar-volume-empty-foreground = ${colors.secondary}
+bar-volume-empty-foreground = ${colors.darkgrey}
 
 [module/cputemp]
 type = custom/script
