@@ -140,10 +140,10 @@ bindsym XF86HomePage exec --no-startup-id $browser https://www.archlinux.org/
 font pango:Inconsolata 12px
 
 #primary colorscheme
-set $CL_PRI #CD00CD
+set $CL_PRI #e5d1a7
 set $CL_SEC #151A13
-set $CL_THD #1e0085
-set $CL_TXTS #32f6e6
+set $CL_THD #333029
+set $CL_TXTS #dfd8d8
 set $CL_TXT #fce0be
 set $CL_FG  #ffffff
 set $CL_BG  #000000
