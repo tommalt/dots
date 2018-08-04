@@ -48,7 +48,7 @@ set nowrapscan
 nmap n nzz
 nmap N Nzz
 
-colorscheme valhalla
+colorscheme acme
 syntax on
 
 set encoding=utf8
