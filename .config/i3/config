@@ -143,8 +143,8 @@ font pango:Inconsolata 12px
 set $CL_PRI #e5d1a7
 set $CL_SEC #151A13
 set $CL_THD #333029
-set $CL_TXTS #dfd8d8
-set $CL_TXT #fce0be
+set $CL_TXT #dfd8d8
+set $CL_TXTS #fce0be
 set $CL_FG  #ffffff
 set $CL_BG  #000000
 set $CL_ALT #db2020
