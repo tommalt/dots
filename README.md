@@ -1,9 +1,8 @@
 # My .dotfiles
 ## Screenshots
 
-### Setup 1: valhalla
-![valhalla-cmus](assets/valhalla-cmus.png)
-![valhalla-1](assets/valhalla-muse.png)
+### Setup 1
+![gold](assets/gold.png)
 
 ### Setup 2: ACME
 ![acme-1](assets/8queens.png)
