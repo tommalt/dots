@@ -12,6 +12,8 @@ PS1="[\u@\h $bold\w$reset]\$ "
 
 alias mk="make"
 
+alias x11="startx >/dev/null 2>&1"
+
 alias gst="git status"
 alias glo="git log --oneline"
 alias glog="git log --oneline --decorate --graph"
