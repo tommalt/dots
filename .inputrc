@@ -1,5 +1,5 @@
 # see readline(3)
-set editing-mode emacs
+set editing-mode vi
 TAB: menu-complete
 "\e[Z": menu-complete-backward
 $if mode=vi
@@ -15,4 +15,6 @@ set keymap vi-insert
 Control-l: clear-screen 
 Control-p: previous-history
 Control-n: next-history
+Control-a: beginning-of-line
+Control-e: end-of-line
 $endif

@@ -129,7 +129,7 @@ exec --no-startup-id /home/tom/bin/menu-key.sh
 exec --no-startup-id xset r rate 175 30
 exec --no-startup-id feh --bg-max /home/tom/Pictures/backgrounds/m_takahashi.jpg
 exec --no-startup-id redshift -l 40.7128:-74.0060 &
-exec --no-startup-id compton &
+#exec --no-startup-id compton &
 
 # dmenu, and application shortcuts
 bindsym $mod+d exec --no-startup-id dmenu_run -nb Black -sb "$CL_PRI" -l 10
@@ -203,8 +203,8 @@ bindsym $mod+shift+i [instance="irc"] scratchpad show
 
 #i3 gaps
 for_window [class="^.*"] border pixel 1
-set $gaps_inner_size 15
-set $gaps_outer_size 15
+set $gaps_inner_size 5
+set $gaps_outer_size 5
 gaps inner $gaps_inner_size
 gaps outer $gaps_outer_size
 

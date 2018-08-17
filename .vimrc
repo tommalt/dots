@@ -31,6 +31,9 @@ set wildmenu
 set wildignore=*.o,*~,*.pyc,*.exe,*.so
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 
+" show amount of highlighted bytes when in visual mode
+set showcmd
+
 " A buffer becomes hidden when it is abandoned
 set hid
 
