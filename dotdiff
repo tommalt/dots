@@ -38,7 +38,9 @@ if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
 fi
 
 if [ -f "$1" ]; then
-	diff "/home/$USER/$1" "$1"
+	color=auto
+	if [ -t 1 ]; then color=always; fi
+	diff --color="$color" -u "$1" "$HOME/$1"
 else
 	echo "error: $1 is not a file"
 	exit 1
