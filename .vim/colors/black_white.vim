@@ -2,6 +2,7 @@
 " rest different shades of gray.
 " colors 232--250 are shades of gray, from dark to light;
 " 16=black, 255=white, 196=red, 88=darkred.
+" 18=DarkBlue, 
 set background=dark
 highlight clear
 if exists("syntax_on")
@@ -9,7 +10,7 @@ if exists("syntax_on")
 endif
 let g:colors_name = "black_white"
 
-hi Normal          ctermbg=16     ctermfg=255
+hi Normal          ctermbg=16     ctermfg=252
 hi Boolean         ctermbg=16     ctermfg=255
 hi Character       ctermbg=16     ctermfg=196
 hi Comment         ctermbg=16     ctermfg=255
@@ -32,7 +33,7 @@ hi Identifier      ctermbg=16     ctermfg=255
 hi Include         ctermbg=16     ctermfg=255
 hi Keyword         ctermbg=16     ctermfg=255
 hi Label           ctermbg=16     ctermfg=255
-hi LineNr          ctermbg=16     ctermfg=255
+hi LineNr          ctermbg=16     ctermfg=8
 hi MatchParen      ctermbg=255    ctermfg=16
 hi Macro           ctermbg=16     ctermfg=255
 hi ModeMsg         ctermbg=16     ctermfg=255
@@ -40,10 +41,10 @@ hi MoreMsg         ctermbg=16     ctermfg=255
 hi NonText         ctermbg=16     ctermfg=255
 hi Number          ctermbg=16     ctermfg=196
 hi Operator        ctermbg=16     ctermfg=255
-hi Pmenu           ctermbg=255    ctermfg=255
-hi PmenuSel        ctermbg=255    ctermfg=16
+hi Pmenu           ctermbg=255    ctermfg=8
+hi PmenuSel        ctermbg=252    ctermfg=16
 hi PmenuSbar       ctermbg=255    ctermfg=16
-hi PmenuThumb      ctermbg=255    ctermfg=255
+hi PmenuThumb      ctermbg=196    ctermfg=255
 hi PreCondit       ctermbg=16     ctermfg=255
 hi PreProc         ctermbg=16     ctermfg=255
 hi Question        ctermbg=16     ctermfg=255
@@ -71,7 +72,7 @@ hi Visual          ctermbg=255    ctermfg=16
 hi VisualNOS       ctermbg=255    ctermfg=16
 hi IncSearch       ctermbg=255    ctermfg=255
 "hi Search          ctermbg=255    ctermfg=255
-hi Search ctermbg=DarkBlue     ctermfg=White
+hi Search          ctermbg=DarkBlue     ctermfg=White
 hi ErrorMsg        ctermbg=124    ctermfg=255
 hi SpellBad        ctermbg=88     ctermfg=255
 hi SpellCap        ctermbg=124    ctermfg=255

@@ -11,10 +11,10 @@ URxvt*iso14755_52: False
 
 !colors
 emacs*foreground:   #d59fd5
-emacs*background:   #150c1e
+emacs*background:   #111111
 URxvt*depth: 32
-URxvt*background: [86]#000002
-URxvt*foreground: #d4d8d8
+URxvt*background: #F9F5D7
+URxvt*foreground: #000000
 
 XTerm.vt100.reverseVideo: true
 
@@ -25,7 +25,18 @@ URxvt*scrollTtyKeypress: true
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
-URxvt.font: -misc-tamsyn-medium-r-normal--14-101-100-100-c-70-iso8859-1
+! FONTS
+
+xterm*font  : -*-tamzen-medium-*-*-*-16-*-*-*-*-*-*-*
+xterm*font1 : -*-tamzen-medium-*-*-*-9-*-*-*-*-*-*-*
+xterm*font2 : -*-tamzen-medium-*-*-*-12-*-*-*-*-*-*-*
+xterm*font3 : -*-tamzen-medium-*-*-*-13-*-*-*-*-*-*-*
+xterm*font4 : -*-tamzen-medium-*-*-*-15-*-*-*-*-*-*-*
+xterm*font5 : -*-tamzen-medium-*-*-*-16-*-*-*-*-*-*-*
+xterm*font6 : -*-tamzen-medium-*-*-*-20-*-*-*-*-*-*-*
+
+URxvt*font: -misc-tamzen-medium-r-normal-*-16-*-*-*-*-*-*-*
+!URxvt*font: -gohu-gohufont-medium-r-normal-*-14-*-*-*-*-*-*-*
 
 URxvt.scrollBar: false
 URxvt.cursorBlink: 1
@@ -33,7 +44,7 @@ URxvt.pointerBlank: true
 URxvt.pointerBlankDelay: 987654321
 
 !perls
-URxvt.perl-ext-common: default,matcher,resize-font,clipboard,url-select,keyboard-select,-searchable-scrollback
+URxvt.perl-ext-common: default,matcher,resize-font,keyboard-select,-searchable-scrollback
 URxvt.colorUL: #4682B4
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
@@ -42,5 +53,6 @@ URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.matcher.button: 1
 !vim mode
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keyboard-select.clipboard: true
 URxvt.resize-font.smaller: M-o
 URxvt.resize-font.bigger:  M-p

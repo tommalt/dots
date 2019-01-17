@@ -41,18 +41,16 @@ set hid
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-if &term =~ '256color'
-	set t_ut=
-endif
 " do not jump to the top of file when searching
 set nowrapscan
+set hlsearch
 
 " center cursor when searching
 nmap n nzz
 nmap N Nzz
 
 colorscheme acme
-syntax on
+syntax off
 
 set encoding=utf8
 set ffs=unix,dos,mac
@@ -67,6 +65,8 @@ set noexpandtab " do not expand tabs to spaces; use hard-tab
 
 au! FileType python setl nosmartindent
 au! FileType html setl shiftwidth=2 tabstop=2 expandtab
+au! FileType css setl shiftwidth=2 tabstop=2 expandtab
+au! FileType scss setl shiftwidth=2 tabstop=2 expandtab
 autocmd FileType haskell setl shiftwidth=8 tabstop=8 expandtab
 autocmd FileType cabal setl shiftwidth=8 tabstop=8 expandtab
 autocmd FileType scheme setl shiftwidth=2 tabstop=2 expandtab
@@ -90,8 +90,8 @@ map <leader>h :bprevious<cr>
 "tabs
 map <leader>tn :tabnew<cr>
 map <leader>td :tabclose<cr>
-map <leader>tl :tabp<cr>
-map <leader>th :tabn<cr>
+map <leader>th :tabp<cr>
+map <leader>tl :tabn<cr>
 
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 

@@ -28,8 +28,8 @@ alias gb="git branch"
 alias gba="git branch -a"
 alias gco="git checkout"
 
-alias l="ls --color=auto -lah"
-alias ll="ls --color=auto -lh"
+alias l="ls -lah"
+alias ll="ls -lh"
 
 # readline support for lisp
 alias sbci="rlwrap sbcl"
