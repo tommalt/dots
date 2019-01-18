@@ -1,0 +1,13 @@
+#!/bin/sh
+
+
+fname=$(cmus-remote -Q | grep ^file | cut -d' ' -f2 | xargs basename | sed 's/\.[^.]*$//')
+artist=$(echo $fname | cut -d'-' -f1 | sed 's/_/ /g')
+title=$(echo $fname | cut -d'-' -f2 | sed 's/_/ /g')
+
+if [ ! -z "$artist" ] && [ ! -z "$title" ]; then
+	echo "$artist - $title"
+	exit 0
+else
+	exit 1
+fi
