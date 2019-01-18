@@ -103,9 +103,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #generic sound control (volume)
-set $inc --no-startup-id amixer -q set Master 5%+
-set $dec --no-startup-id amixer -q set Master 5%-
-set $mute --no-startup-id amixer -q set Master toggle
+set $inc --no-startup-id dash -c 'amixer -q set Master 5%+ && pkill -RTMIN+10 i3blocks'
+set $dec --no-startup-id dash -c 'amixer -q set Master 5%- && pkill -RTMIN+10 i3blocks'
+set $mute --no-startup-id dash -c 'amixer -q set Master toggle && pkill -RTMIN+10 i3blocks'
 
 #cmus control
 set $music --no-startup-id urxvt -e cmus
@@ -137,9 +137,19 @@ bindsym $mod+Shift+f exec --no-startup-id $browser
 bindsym XF86HomePage exec --no-startup-id $browser https://www.archlinux.org/
 
 # Style #
-font pango:Inconsolata 12px
 
-#primary colorscheme
+font -misc-tamzen-medium-r-normal-*-12-*-*-*-*-*-*-*
+
+# colorscheme
+# PRI  = beige
+# SEC  = almost black
+# THD  = dark grey
+# TXT  = light gray (off white)
+# TXTS = peach
+# FG   = white
+# BG   = black
+# ALT  = cyan blue
+# URG  = crimson red
 set $CL_PRI #e5d1a7
 set $CL_SEC #151A13
 set $CL_THD #333029
@@ -147,20 +157,31 @@ set $CL_TXT #dfd8d8
 set $CL_TXTS #fce0be
 set $CL_FG  #ffffff
 set $CL_BG  #000000
-set $CL_ALT #db2020
+set $CL_ALT #AFFFFF
+set $CL_URG #db2020
 #class                  border   background   text     indicator   child_border
 client.focused          $CL_THD   $CL_BG      $CL_TXTS $CL_PRI    $CL_PRI
 client.focused_inactive $CL_THD   $CL_BG      $CL_TXT  $CL_PRI    $CL_SEC
 client.unfocused        $CL_SEC   $CL_BG      $CL_TXT  $CL_PRI    $CL_SEC
-client.urgent           $CL_ALT   $CL_ALT     $CL_ALT  $CL_ALT    $CL_ALT
+client.urgent           $CL_URG   $CL_URG     $CL_URG  $CL_URG    $CL_URG
 
 # Bar setup
 bar {
-    tray_output none
-    mode invisible
+    colors {
+	background $CL_BG
+	statusline $CL_ALT
+	separator $CL_ALT
+	focused_workspace $CL_SEC $CL_BG $CL_ALT
+	active_workspace $CL_SEC $CL_BG $CL_PRI
+	urgent_workspace $CL_SEC $CL_BG $CL_URG
+    }
+    status_command i3blocks
+    position top
+    mode dock
+    modifier none
 }
 
-# Remove border while only one window opens
+# Remove border when only one window is open
 smart_borders on
 new_window pixel 1
 new_float pixel 1
