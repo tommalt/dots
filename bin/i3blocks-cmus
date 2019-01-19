@@ -1,7 +1,8 @@
 #!/bin/sh
 
 
-fname=$(cmus-remote -Q | grep ^file | cut -d' ' -f2 | xargs basename | sed 's/\.[^.]*$//')
+fname=$(cmus-remote -Q | grep ^file | sed 's/^file //')
+fname=$(basename "$fname" | sed 's/\.[^.]*$//')
 artist=$(echo $fname | cut -d'-' -f1 | sed 's/_/ /g')
 title=$(echo $fname | cut -d'-' -f2 | sed 's/_/ /g')
 
